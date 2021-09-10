@@ -1,0 +1,4 @@
+ChestSteady - Sentado
+ChestWalking - Em pé, respirar mais produndamente, parado, andar, parado
+ArmsSteady - Parado
+ArmsWalking - Em pé a respirar mais profundamente, andar, parado
