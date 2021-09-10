@@ -5,3 +5,5 @@ Packages
 *.dll
 *.exe
 *.exe.settings
+Debug
+.vs
