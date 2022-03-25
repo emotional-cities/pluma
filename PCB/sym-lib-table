@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name EmotionalCities_lib)(type Legacy)(uri ${KIPRJMOD}/EmotionalCities_lib.lib)(options "")(descr ""))
+)
