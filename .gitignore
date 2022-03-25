@@ -7,3 +7,45 @@ Packages
 *.exe.settings
 Debug
 .vs
+
+.ini
+
+# For PCBs designed using KiCad: https://www.kicad.org/
+# Format documentation: https://kicad.org/help/file-formats/
+
+# Generic backup files
+*~
+\#*
+.\#*
+
+# KiCad backup files
+*.bak
+*.bck
+*.kicad_pcb-bak
+
+# KiCad generated files
+*.erc
+*.net
+*-cache.lib
+*-rescue.lib
+
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups
+*.kicad_prl
+*.sch-bak
+*~
+_autosave-*
+*#
+*.tmp
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+
+# Exported BOM files
+*.xml
+*.csv
