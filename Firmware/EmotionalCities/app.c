@@ -40,7 +40,7 @@ void hwbp_app_initialize(void)
     uint8_t hwH = 0;
     uint8_t hwL = 1;
     uint8_t fwH = 0;
-    uint8_t fwL = 3;
+    uint8_t fwL = 4;
     uint8_t ass = 0;
     
    	/* Start core */
@@ -239,6 +239,10 @@ void core_callback_t_1ms(void)
 			if (app_regs.REG_STREAM_ECG < 0)
 				app_regs.REG_STREAM_ECG = 0;
 			
+			core_func_send_event(ADD_REG_STREAM_ECG, false);
+		}
+		else
+		{
 			core_func_send_event(ADD_REG_STREAM_ECG, false);
 		}
 	}
