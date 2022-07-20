@@ -208,6 +208,12 @@ typedef struct {
 	void i2c0_init(void);
 	bool i2c0_wReg(i2c_dev_t* dev);
 	bool i2c0_rReg(i2c_dev_t* dev, uint8_t bytes2read);
+	
+	bool i2c0_rReg_send_1st_byte(i2c_dev_t* dev);
+	bool i2c0_rReg_send_2nd_and_3rd_bytes(i2c_dev_t* dev);
+	void i2c0_rReg_clock_stretching_before_read_bytes(void);
+	void i2c0_rReg_read_byte(i2c_dev_t* dev, uint8_t *byte_return, bool last_one);
+	
 	bool i2c0_rArray(i2c_dev_t* dev, uint8_t bytes2read);
 	bool i2c0_wArray(i2c_dev_t* dev, uint8_t length);
 #endif

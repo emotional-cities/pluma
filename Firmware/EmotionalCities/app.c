@@ -6,9 +6,9 @@
 #include "app_funcs.h"
 #include "app_ios_and_regs.h"
 
-#include "oximeter_hrsensor.h"
-#include "i2c_oximeter.h"
-#include "i2c_bno055.h"
+
+#include "i2c_oximeter_MAX220.h"
+#include "i2c_MotionSens_bno055.h"
 
 
 /************************************************************************/
@@ -25,13 +25,13 @@ extern i2c_dev_t oximeter;
 /************************************************************************/
 /* Initialize app                                                       */
 /************************************************************************/
-static const uint8_t default_device_name[] = "Pluma";
-
+static const uint8_t default_device_name[] = "BioReader";
 uint16_t heartRate;
 uint8_t confidence;
 uint16_t oxygen;
 uint8_t status;
 uint8_t data[6];
+
 
 
 void hwbp_app_initialize(void)
@@ -40,7 +40,7 @@ void hwbp_app_initialize(void)
     uint8_t hwH = 0;
     uint8_t hwL = 1;
     uint8_t fwH = 0;
-    uint8_t fwL = 1;
+    uint8_t fwL = 3;
     uint8_t ass = 0;
     
    	/* Start core */
@@ -72,6 +72,7 @@ void core_callback_catastrophic_error_detected(void)
 /************************************************************************/
 /* Initialization Callbacks                                             */
 /************************************************************************/
+bool i_;
 void core_callback_1st_config_hw_after_boot(void)
 {
 	/* Initialize IOs */
@@ -85,7 +86,8 @@ void core_callback_1st_config_hw_after_boot(void)
 	initialize_oximeter_hrsensor();
 	
 	/* Initialize BNO055 */
-	initialize_bno055();
+	//i_ = initialize_bno055();
+	//init_ios();
 }
 
 void core_callback_reset_registers(void)
@@ -98,6 +100,14 @@ void core_callback_registers_were_reinitialized(void)
 {
 	/* Update registers if needed */
 	
+	/*TWIC.CTRL = TWI_SDAHOLD_OFF_gc;							// Remove SDA hold time
+	TWIC.MASTER.CTRLA  = TWI_MASTER_INTLVL_LO_gc;			// Set interrupts to low level
+	TWIC.MASTER.CTRLA |= TWI_MASTER_RIEN_bm;				// Enable read interrupt enable
+	TWIC.MASTER.CTRLA |= TWI_MASTER_WIEN_bm;				// Enable write interrupt enable
+	TWIC.MASTER.CTRLA |= TWI_MASTER_ENABLE_bm;				// Set TWI as Master
+	TWIC.MASTER.CTRLB  = TWI_MASTER_TIMEOUT_DISABLED_gc;	// Disable inactive bus timeout
+	*/
+
 }
 
 /************************************************************************/
@@ -127,6 +137,7 @@ void core_callback_device_to_speed(void) {}
 /* Callbacks: 1 ms timer                                                */
 /************************************************************************/
 uint16_t ms_counter = 0;
+uint8_t motion_counter = 0;
 
 void core_callback_t_before_exec(void) {}
 void core_callback_t_after_exec(void) {}
@@ -140,7 +151,24 @@ void core_callback_t_500us(void) {}
 
 void core_callback_t_1ms(void)
 {
-	if (app_regs.REG_STREAM_ENABLE & B_STREAM_OXIMETER)
+	clr_BNO055_TRIG;
+	
+	core_func_mark_user_timestamp();
+	
+	/* MOTION external trigger */
+	if (app_regs.REG_STREAM_ENABLE & B_STREAM_MOTION)
+	{
+		if ((ms_counter % (1000/50)) == 0)	// 50 Hz
+		{
+			set_BNO055_TRIG;
+			app_regs.REG_STREAM_MOTION = motion_counter;
+			core_func_send_event(ADD_REG_STREAM_MOTION, false);
+			motion_counter++;
+		}
+	}
+	
+	/* OXIMETER MAX220 reading */
+ 	if (app_regs.REG_STREAM_ENABLE & B_STREAM_OXIMETER)
 	{
 		if (ms_counter == 991 || ms_counter == 491)	// 2 Hz
 			if (oximeter_read_all_step1(&oximeter) == 0)
@@ -178,10 +206,31 @@ void core_callback_t_1ms(void)
 				app_regs.REG_STREAM_OXIMETER[1] = heartRate;
 				app_regs.REG_STREAM_OXIMETER[2] = confidence;
 				app_regs.REG_STREAM_OXIMETER[3] = status;
-				core_func_send_event(ADD_REG_STREAM_OXIMETER, true);
+				core_func_send_event(ADD_REG_STREAM_OXIMETER, false);
 			}
-	}
+	}	
 	
+	/* MOTION SENSOR #1 BN055 reading */
+	//if (app_regs.REG_STREAM_ENABLE & B_STREAM_MOTION)
+	/*
+	if(0)
+	{
+		if (ms_counter == 991 || ms_counter == 491)	// 2 Hz
+		{
+			bno055_read_vector(VECTOR_ACCELEROMETER, &app_regs.REG_STREAM_MOTION[0]);
+			bno055_read_vector(VECTOR_MAGNETOMETER, &app_regs.REG_STREAM_MOTION[3]);
+			bno055_read_vector(VECTOR_GYROSCOPE, &app_regs.REG_STREAM_MOTION[6]);
+			bno055_read_vector(VECTOR_EULER, &app_regs.REG_STREAM_MOTION[9]);
+			bno055_read_vector(VECTOR_LINEARACCEL, &app_regs.REG_STREAM_MOTION[12]);
+			bno055_read_vector(VECTOR_GRAVITY, &app_regs.REG_STREAM_MOTION[15]);
+			bno055_read_vector(VECTOR_QUATERNION, &app_regs.REG_STREAM_MOTION[18]);
+				
+			core_func_send_event(ADD_REG_STREAM_MOTION, true);				
+		}
+	}
+	*/
+	
+	/* ECG Heart Rate ADC#5 reading*/
 	if (app_regs.REG_STREAM_ENABLE & B_STREAM_ECG)
 	{
 		if ((ms_counter % 20) == 0)	// 50 Hz
@@ -190,10 +239,11 @@ void core_callback_t_1ms(void)
 			if (app_regs.REG_STREAM_ECG < 0)
 				app_regs.REG_STREAM_ECG = 0;
 			
-			core_func_send_event(ADD_REG_STREAM_ECG, true);
+			core_func_send_event(ADD_REG_STREAM_ECG, false);
 		}
 	}
-		
+	
+	/* EDA/GSR module Mikroe-2860 ADC#7 reading */
 	if (app_regs.REG_STREAM_ENABLE & B_STREAM_GSR)
 	{
 		if ((ms_counter % 250) == 0)	// 4 Hz
@@ -202,12 +252,13 @@ void core_callback_t_1ms(void)
 			if (app_regs.REG_STREAM_GSR < 0)
 				app_regs.REG_STREAM_GSR = 0;
 			
-			core_func_send_event(ADD_REG_STREAM_GSR, true);
+			core_func_send_event(ADD_REG_STREAM_GSR, false);
 		}
 	}
 	
 	ms_counter++;
-	
+
+	/*
 	while(0)
 	{
 		if (app_regs.REG_STREAM_ENABLE & B_STREAM_MOTION)
@@ -221,71 +272,7 @@ void core_callback_t_1ms(void)
 			bno055_read_vector(VECTOR_QUATERNION, &app_regs.REG_STREAM_MOTION[18]);
 		}
 	}
-			 
-	while(0)
-	{
-		int16_t ecg = adc_A_read_channel(5);
-		if (ecg < 0)
-			ecg = 0;
-	
-		app_regs.REG_STREAM_ECG = ecg;
-		core_func_send_event(ADD_REG_STREAM_ECG, true);
-	
-	
-		uint16_t gsr = adc_A_read_channel(7);
-		if (gsr < 0)
-		gsr = 0;
-		
-		app_regs.REG_STREAM_GSR = gsr;
-		core_func_send_event(ADD_REG_STREAM_GSR, true);
-	
-		//_delay_ms(10);
-	}
-		
-
-
-	//Oxygen & Heart Rate reading
-	while(0)
-	{	
-		
-		// This function reads the CONFIGURATION_REGISTER (0x0A)	
-		//uint8_t configuration_register;
-		//if (read_byte(&oximeter, READ_REGISTER, READ_MAX30101, CONFIGURATION_REGISTER, &configuration_register) == 0)
-			//{ // SUCCESS
-			 //}
-		
-		// Read all
-
-		
-		if (oximeter_read_all(&oximeter, data) == 0)
-			{ // SUCCESS
-			 }
-		
-		// Heart Rate formatting
-		//uint16_t heartRate;
-		heartRate = data[0];
-		heartRate = heartRate << 8;
-		heartRate |= (data[1]); 
-		heartRate /= 10; 
-
-		// Confidence formatting
-		//uint8_t confidence;
-		confidence = data[2];
-
-		//Blood oxygen level formatting
-		//uint16_t oxygen;
-		oxygen = data[3];
-		oxygen = oxygen << 8;
-		oxygen |= data[4]; 
-		oxygen /= 10;
-
-		//"Machine State" - has a finger been detected?
-		status = data[5];
-	
-		_delay_ms(100);
-	}
-
-	
+	*/	
 }
 
 /************************************************************************/

@@ -3,7 +3,10 @@
 
 #include "i2c.h"
 
-/** BNO055 Registers **/
+/* BNO055 Device ID */
+#define BNO055_ID 0xA0
+
+/* BNO055 Registers */
 typedef enum {
 	 /* Page id register definition */
 	 BNO055_PAGE_ID_ADDR = 0X07,
@@ -212,7 +215,7 @@ typedef enum {
 };
 
 bool initialize_bno055(void);
-void bno055_set_mode(uint8_t mode);
+bool bno055_set_mode(uint8_t mode);
 bool bno055_read_vector(uint8_t vector, void * array);
 
 #endif /* _I2C_BNO_H_ */

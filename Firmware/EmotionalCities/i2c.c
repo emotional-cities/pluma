@@ -10,10 +10,12 @@
 static void i2c0_start(void);
 static void i2c0_stop(void);
 
+#define read_SCL0 read_io(I2C0_PORT, I2C0_SCL)
+
 void i2c0_init(void)
 {
 	io_pin2out(&I2C0_PORT, I2C0_SDA, OUT_IO_WIREDAND, IN_EN_IO_EN);	// SDA0
-	io_pin2out(&I2C0_PORT, I2C0_SCL, OUT_IO_DIGITAL, IN_EN_IO_DIS);	// SCL0
+	io_pin2out(&I2C0_PORT, I2C0_SCL, OUT_IO_WIREDAND, IN_EN_IO_EN);	// SCL0
 	
 	clear_SCL0;	_delay_us(10);
 	set_SDA0;	_delay_us(10);
@@ -42,9 +44,12 @@ void i2c0_init(void)
 static void i2c0_start(void)
 {
 	tBUF;
+	tBUF;
 	clear_SDA0;	
 	tHDSTA;
+	tHDSTA;
 	clear_SCL0;	
+	tCLK_I2C0;
 	tCLK_I2C0;
 }
 
@@ -52,8 +57,19 @@ static void i2c0_stop(void)
 {
 	clear_SDA0_and_SCL0;
 	tCLK_I2C0;
+	
 	set_SCL0;	
-	tSUSTO;	
+	while(!read_SCL0);
+	tCLK_I2C0;
+	tCLK_I2C0;
+	
+// 	clear_SDA0_and_SCL0;
+// 	tCLK_I2C0;
+// 	tCLK_I2C0;
+	
+	set_SCL0;			
+	tSUSTO;
+	tSUSTO;
 	set_SDA0;
 }
 
@@ -84,9 +100,19 @@ bool i2c0_wReg(i2c_dev_t* dev)
 	
 	clear_SCL0;	set_SDA0; tCLK_I2C0; set_SCL0; tCLK_I2C0;
 	if(read_SDA0) {
+		/* Clock stretching */
+		while(!read_SCL0);
+		tCLK_I2C0;
+		
 		i2c0_stop();
 		return false;
 	}
+	
+	/* Wait until slave releases clock in case it uses clock stretching */
+	while(!read_SCL0);
+	tCLK_I2C0;	
+	clear_SCL0;	
+	while(!read_SDA0);	
 
 	clear_SCL0;	if (dev->reg & 0x80) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
 	clear_SCL0;	if (dev->reg & 0x40) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
@@ -99,9 +125,19 @@ bool i2c0_wReg(i2c_dev_t* dev)
 
 	clear_SCL0;	set_SDA0; tCLK_I2C0; set_SCL0; tCLK_I2C0;
 	if(read_SDA0) {
+		/* Clock stretching */
+		while(!read_SCL0);
+		tCLK_I2C0;
+		
 		i2c0_stop();
 		return false;
 	}
+	
+	/* Wait until slave releases clock in case it uses clock stretching */
+	while(!read_SCL0);
+	tCLK_I2C0;	
+	clear_SCL0;	
+	while(!read_SDA0);	
 
 	clear_SCL0;	if (dev->reg_val & 0x80) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
 	clear_SCL0;	if (dev->reg_val & 0x40) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
@@ -114,13 +150,24 @@ bool i2c0_wReg(i2c_dev_t* dev)
 	
 	clear_SCL0;	set_SDA0; tCLK_I2C0; set_SCL0; tCLK_I2C0;
 	if(read_SDA0) {
+		/* Clock stretching */
+		while(!read_SCL0);
+		tCLK_I2C0;
+		
 		i2c0_stop();
 		return false;
 	}
-		
+	
+	/* Wait until slave releases clock in case it uses clock stretching */
+	while(!read_SCL0);
+	tCLK_I2C0;	
+	clear_SCL0;	
+	while(!read_SDA0);	
 	i2c0_stop();
+	
 	return true;
 }
+
 
 bool i2c0_rReg(i2c_dev_t* dev, uint8_t bytes2read)
 {
@@ -144,10 +191,197 @@ bool i2c0_rReg(i2c_dev_t* dev, uint8_t bytes2read)
 	
 	clear_SCL0;	set_SDA0; tCLK_I2C0; set_SCL0; tCLK_I2C0;
 	if(read_SDA0) {
+		/* Clock stretching */
+		while(!read_SCL0);
+		tCLK_I2C0;
+		
 		i2c0_stop();
 		return false;
 	}
+	
+	/* Wait until slave releases clock in case it uses clock stretching */
+	while(!read_SCL0);
+	tCLK_I2C0;	
+	clear_SCL0;	
+	while(!read_SDA0);
+	
+	clear_SCL0;	if (dev->reg & 0x80) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;	
+	clear_SCL0;	if (dev->reg & 0x40) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (dev->reg & 0x20) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (dev->reg & 0x10) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (dev->reg & 0x08) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (dev->reg & 0x04) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (dev->reg & 0x02) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (dev->reg & 0x01) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	
+	clear_SCL0;	set_SDA0; tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	if(read_SDA0) {
+		/* Clock stretching */
+		while(!read_SCL0);
+		
+		tCLK_I2C0;
+		i2c0_stop();
+		return false;
+	}
+	
+	/* Wait until slave releases clock in case it uses clock stretching */
+	while(!read_SCL0);
+	tCLK_I2C0;	
+	clear_SCL0;	
+	while(!read_SDA0);
+	
+	/* Repeat Start */
+	clear_SCL0;
+	//set_SDA0;
+	tCLK_I2C0;
+	set_SCL0;
+	tSUSTA;
+	clear_SDA0;
+	tHDSTA;
+	
+	clear_SCL0;	if (add & 0x80) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x40) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x20) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x10) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x08) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x04) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x02) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;									 set_SDA0;							tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	
+	clear_SCL0;	set_SDA0; tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	if(read_SDA0) {		
+		/* Clock stretching */
+		while(!read_SCL0);
+		tCLK_I2C0;
+		
+		i2c0_stop();
+		return false;
+	}
+	
+	/* Wait until slave releases clock in case it uses clock stretching */
+	while(!read_SCL0);
+	tCLK_I2C0;
+	clear_SCL0;	
+	while(!read_SDA0);
+	tCLK_I2C0;
 
+	
+	uint8_t byte;
+	
+	for (uint8_t i = 0; i < bytes2read; i++) {
+		byte = 0;
+		set_SDA0;
+		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x80;
+		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x40;
+		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x20;
+		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x10;
+		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x08;
+		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x04;
+		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x02;
+		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x01;
+		clear_SCL0;
+		
+		if (i==0)
+		{
+			dev->reg_val = byte;
+		}
+		
+		if ( i == bytes2read-1)
+		{
+			set_SDA0;
+			tCLK_I2C0; tCLK_I2C0;
+			set_SCL0;
+			tCLK_I2C0; tCLK_I2C0;
+			clear_SCL0;
+			//tCLK_I2C0; tCLK_I2C0;
+			clear_SDA0;
+			set_SCL0;
+			tCLK_I2C0;
+			
+			/* Wait until slave releases clock in case it uses clock stretching */
+			while(!read_SCL0);
+			tCLK_I2C0;
+			
+			clear_SCL0;
+			tCLK_I2C0; tCLK_I2C0;
+			set_SCL0;
+			
+				
+		tSUSTO;
+		tSUSTO;
+		set_SDA0;
+		return true;
+			
+			
+			clear_SCL0;	
+			while(!read_SDA0);
+			tCLK_I2C0;			
+			
+			dev->data[i] = byte;
+			_delay_us(780);
+			i2c0_stop();
+
+			return true;
+		}
+		else
+		{
+			clear_SDA0;			
+			tCLK_I2C0;
+			set_SCL0;
+			tCLK_I2C0;
+			clear_SCL0;
+			set_SDA0;
+			tCLK_I2C0;
+			
+			_delay_us(180);
+			
+			dev->data[i] = byte;
+		}
+	}
+	return true;
+}
+
+bool i2c0_rReg_send_1st_byte(i2c_dev_t* dev)
+{
+	i2c0_start();
+	
+	uint8_t add = (dev->add << 1);
+	
+	// Each cycle
+	//   __
+	//__|
+	clear_SCL0;	if (add & 0x80) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x40) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x20) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x10) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x08) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x04) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;	if (add & 0x02) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	clear_SCL0;														 clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	
+	clear_SCL0;	set_SDA0; tCLK_I2C0; set_SCL0; tCLK_I2C0;
+	if(read_SDA0) {
+		/* Clock stretching */
+		while(!read_SCL0);
+		tCLK_I2C0;
+		
+		i2c0_stop();
+		return false;
+	}
+	
+	return true;
+}
+
+bool i2c0_rReg_send_2nd_and_3rd_bytes(i2c_dev_t* dev)
+{
+	uint8_t add = (dev->add << 1);
+	
+	/* Wait until slave releases clock in case it uses clock stretching */
+	while(!read_SCL0);
+	tCLK_I2C0;
+	clear_SCL0;
+	while(!read_SDA0);
+	
 	clear_SCL0;	if (dev->reg & 0x80) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
 	clear_SCL0;	if (dev->reg & 0x40) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
 	clear_SCL0;	if (dev->reg & 0x20) set_SDA0; else clear_SDA0;	tCLK_I2C0; set_SCL0; tCLK_I2C0;
@@ -159,9 +393,19 @@ bool i2c0_rReg(i2c_dev_t* dev, uint8_t bytes2read)
 	
 	clear_SCL0;	set_SDA0; tCLK_I2C0; set_SCL0; tCLK_I2C0;
 	if(read_SDA0) {
+		/* Clock stretching */
+		while(!read_SCL0);
+		
+		tCLK_I2C0;
 		i2c0_stop();
 		return false;
 	}
+	
+	/* Wait until slave releases clock in case it uses clock stretching */
+	while(!read_SCL0);
+	tCLK_I2C0;
+	clear_SCL0;
+	while(!read_SDA0);
 	
 	/* Repeat Start */
 	clear_SCL0;
@@ -183,32 +427,72 @@ bool i2c0_rReg(i2c_dev_t* dev, uint8_t bytes2read)
 	
 	clear_SCL0;	set_SDA0; tCLK_I2C0; set_SCL0; tCLK_I2C0;
 	if(read_SDA0) {
+		/* Clock stretching */
+		while(!read_SCL0);
+		tCLK_I2C0;
+		
 		i2c0_stop();
 		return false;
 	}
 	
-	uint8_t byte;
-	
-	for (uint8_t i = 0; i < bytes2read; i++) {
-		byte = 0;
-		set_SDA0;
-		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; if (read_SDA0) byte |= 0x80;
-		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; if (read_SDA0) byte |= 0x40;
-		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; if (read_SDA0) byte |= 0x20;
-		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; if (read_SDA0) byte |= 0x10;
-		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; if (read_SDA0) byte |= 0x08;
-		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; if (read_SDA0) byte |= 0x04;
-		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; if (read_SDA0) byte |= 0x02;
-		clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; if (read_SDA0) byte |= 0x01;
-		
-		clear_SCL0;	if ( i == bytes2read-1) set_SDA0; else clear_SDA0; tCLK_I2C0; set_SCL0; tCLK_I2C0;
-		clear_SCL0;
-		dev->data[i] = byte;
-		if (i==0) dev->reg_val = byte;
-	}
-
-	i2c0_stop();
 	return true;
+}
+
+void i2c0_rReg_clock_stretching_before_read_bytes(void)
+{	
+	/* Wait until slave releases clock in case it uses clock stretching */
+	while(!read_SCL0);
+	tCLK_I2C0;
+	clear_SCL0;
+	while(!read_SDA0);
+	tCLK_I2C0;
+}
+
+void i2c0_rReg_read_byte(i2c_dev_t* dev, uint8_t *byte_return, bool last_one)
+{	
+	uint8_t byte = 0;
+	
+	set_SDA0;
+	clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x80;
+	clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x40;
+	clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x20;
+	clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x10;
+	clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x08;
+	clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x04;
+	clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x02;
+	clear_SCL0;	tCLK_I2C0; set_SCL0; tCLK_I2C0; tCLK_I2C0;  tCLK_I2C0;if (read_SDA0) byte |= 0x01;
+	clear_SCL0;	
+	
+	if (last_one)
+	{
+		set_SDA0;
+		tCLK_I2C0; tCLK_I2C0;
+		set_SCL0;
+		tCLK_I2C0; tCLK_I2C0;
+		clear_SCL0;
+		tCLK_I2C0; tCLK_I2C0;
+		clear_SDA0;
+				
+		_delay_us(180);
+		i2c0_stop();
+		
+		*byte_return = byte;
+		return true;
+	}
+	else
+	{
+		clear_SDA0;
+		tCLK_I2C0;
+		set_SCL0;
+		tCLK_I2C0;
+		clear_SCL0;
+		set_SDA0;
+		tCLK_I2C0;
+		
+		_delay_us(180);
+		
+		*byte_return = byte;
+	}
 }
 
 bool i2c0_rArray(i2c_dev_t* dev, uint8_t bytes2read)

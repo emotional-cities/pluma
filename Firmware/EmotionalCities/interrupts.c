@@ -27,18 +27,40 @@ extern AppRegs app_regs;
 // ISR(TCD1_CCA_vect, ISR_NAKED)
 
 /************************************************************************/ 
-/* ECG_LOM                                                              */
+/* Digital input 0                                                      */
 /************************************************************************/
 ISR(PORTC_INT0_vect, ISR_NAKED)
 {
+	if (read_DI0)
+	{
+		app_regs.REG_INPUTS |= B_DI0;
+		core_func_send_event(ADD_REG_INPUTS, true);
+	}
+	else
+	{
+		app_regs.REG_INPUTS &= ~(B_DI0);
+		core_func_send_event(ADD_REG_INPUTS, true);
+	}
+	
 	reti();
 }
 
 /************************************************************************/ 
-/* ECG_LOP                                                              */
+/* Digital input 1                                                      */
 /************************************************************************/
 ISR(PORTC_INT1_vect, ISR_NAKED)
 {
+	if (read_DI1)
+	{
+		app_regs.REG_INPUTS |= B_DI1;
+		core_func_send_event(ADD_REG_INPUTS, true);
+	}
+	else
+	{		
+		app_regs.REG_INPUTS &= ~(B_DI1);
+		core_func_send_event(ADD_REG_INPUTS, true);
+	}
+	
 	reti();
 }
 

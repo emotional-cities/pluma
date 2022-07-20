@@ -26,6 +26,9 @@ void app_read_REG_STREAM_OXIMETER(void);
 void app_read_REG_STREAM_ECG(void);
 void app_read_REG_STREAM_GSR(void);
 void app_read_REG_STREAM_MOTION(void);
+void app_read_REG_INPUTS(void);
+void app_read_REG_SET_OUTPUTS(void);
+void app_read_REG_CLEAR_OUTPUTS(void);
 
 bool app_write_REG_STREAM_ENABLE(void *a);
 bool app_write_REG_STREAM_DISABLE(void *a);
@@ -33,6 +36,9 @@ bool app_write_REG_STREAM_OXIMETER(void *a);
 bool app_write_REG_STREAM_ECG(void *a);
 bool app_write_REG_STREAM_GSR(void *a);
 bool app_write_REG_STREAM_MOTION(void *a);
+bool app_write_REG_INPUTS(void *a);
+bool app_write_REG_SET_OUTPUTS(void *a);
+bool app_write_REG_CLEAR_OUTPUTS(void *a);
 
 
 #endif /* _APP_FUNCTIONS_H_ */

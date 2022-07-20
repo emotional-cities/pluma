@@ -14,7 +14,10 @@ void (*app_func_rd_pointer[])(void) = {
 	&app_read_REG_STREAM_OXIMETER,
 	&app_read_REG_STREAM_ECG,
 	&app_read_REG_STREAM_GSR,
-	&app_read_REG_STREAM_MOTION
+	&app_read_REG_STREAM_MOTION,
+	&app_read_REG_INPUTS,
+	&app_read_REG_SET_OUTPUTS,
+	&app_read_REG_CLEAR_OUTPUTS
 };
 
 bool (*app_func_wr_pointer[])(void*) = {
@@ -23,7 +26,10 @@ bool (*app_func_wr_pointer[])(void*) = {
 	&app_write_REG_STREAM_OXIMETER,
 	&app_write_REG_STREAM_ECG,
 	&app_write_REG_STREAM_GSR,
-	&app_write_REG_STREAM_MOTION
+	&app_write_REG_STREAM_MOTION,
+	&app_write_REG_INPUTS,
+	&app_write_REG_SET_OUTPUTS,
+	&app_write_REG_CLEAR_OUTPUTS
 };
 
 
@@ -121,17 +127,73 @@ bool app_write_REG_STREAM_GSR(void *a)
 /************************************************************************/
 /* REG_STREAM_MOTION                                                    */
 /************************************************************************/
-// This register is an array with 22 positions
 void app_read_REG_STREAM_MOTION(void)
 {
-	//app_regs.REG_STREAM_MOTION[0] = 0;
+	//app_regs.REG_STREAM_MOTION = 0;
 
 }
 
 bool app_write_REG_STREAM_MOTION(void *a)
 {
-	int16_t *reg = ((int16_t*)a);
+	uint8_t reg = *((uint8_t*)a);
 
-	app_regs.REG_STREAM_MOTION[0] = reg[0];
+	app_regs.REG_STREAM_MOTION = reg;
+	return true;
+}
+
+/************************************************************************/
+/* REG_INPUTS                                                           */
+/************************************************************************/
+void app_read_REG_INPUTS(void)
+{
+	//app_regs.REG_INPUTS = 0;
+
+}
+
+bool app_write_REG_INPUTS(void *a)
+{
+	uint8_t reg = *((uint8_t*)a);
+
+	app_regs.REG_INPUTS = reg;
+	return true;
+}
+
+/************************************************************************/
+/* REG_SET_OUTPUTS                                                      */
+/************************************************************************/
+void app_read_REG_SET_OUTPUTS(void)
+{
+	//app_regs.REG_SET_OUTPUTS = 0;
+
+}
+
+bool app_write_REG_SET_OUTPUTS(void *a)
+{
+	uint8_t reg = *((uint8_t*)a);
+	
+	if (reg & B_DO0) set_DO0;
+	if (reg & B_DO1) set_DO1;
+
+	app_regs.REG_SET_OUTPUTS = reg;
+	return true;
+}
+
+/************************************************************************/
+/* REG_CLEAR_OUTPUTS                                                    */
+/************************************************************************/
+void app_read_REG_CLEAR_OUTPUTS(void)
+{
+	//app_regs.REG_CLEAR_OUTPUTS = 0;
+
+}
+
+bool app_write_REG_CLEAR_OUTPUTS(void *a)
+{
+	uint8_t reg = *((uint8_t*)a);
+	
+	if (reg & B_DO0) clr_DO0;
+	if (reg & B_DO1) clr_DO1;
+
+	app_regs.REG_CLEAR_OUTPUTS = reg;
 	return true;
 }

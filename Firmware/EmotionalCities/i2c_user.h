@@ -20,7 +20,7 @@
 #define I2C0_CLK CLK_32MHZ_200KHz
 //#define I2C0_CLK CLK_32MHZ_300KHz
 //#define I2C0_CLK CLK_32MHZ_400KHz
-#define I2C0_PORT PORTD
+#define I2C0_PORT PORTC
 #define I2C0_SDA 0
 #define I2C0_SCL 1
 
