@@ -1,7 +1,9 @@
 import pandas as pd
 
 from pluma.stream import Stream, StreamType
+from pluma.stream.harp import HarpStream
 from pluma.io.ubx import load_ubx_stream, filter_ubx_event
+
 
 class UbxStream(Stream):
 
