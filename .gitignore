@@ -7,6 +7,7 @@ Packages
 *.exe.settings
 Debug
 .vs
+.vscode
 
 .ini
 
@@ -49,3 +50,7 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+
+# Python temp files
+__pycache__
+*.pyc
