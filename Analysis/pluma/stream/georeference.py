@@ -151,7 +151,7 @@ class Georeference():
                     lon: pd.Series,
                     lat: pd.Series,
                     height: pd.Series):
-        if (time is None) or(lon is None) or (lat is None) or (height is None):
+        if (time is None) or (lon is None) or (lat is None) or (height is None):
             raise ValueError("No inputs can be None.")
 
         self._build_spacetime_from_series(time=time,

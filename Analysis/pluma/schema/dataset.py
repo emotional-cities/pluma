@@ -9,10 +9,15 @@ from pluma.plotting import maps
 
 from pluma.stream.ubx import UbxStream
 
+from pluma.stream.georeference import Georeference
+
 
 class Dataset:
 
-    def __init__(self, root: str, datasetlabel: str = '', ):
+    def __init__(self,
+                 root: str,
+                 datasetlabel: str = '',
+                 georeference: Georeference = Georeference()):
         """High level class to represent an entire dataset. Loads and
         contains all the streams and methods for general dataset management.
 
@@ -22,13 +27,14 @@ class Dataset:
         """
         self.rootfolder = root
         self.datasetlabel = datasetlabel
-        self.georeference = None
+        self.georeference = georeference
         self.streams = None
 
     def add_ubx_georeference(self,
                              ubxstream: UbxStream = None,
                              event: str = "NAV-HPPOSLLH",
-                             calibrate_clock: bool = True):
+                             calibrate_clock: bool = True,
+                             strip=True):
         """_summary_
 
         Args:
@@ -54,7 +60,9 @@ class Dataset:
                 navdata = ubxstream.parseposition(
                     event=event,
                     calibrate_clock=calibrate_clock)
-        self.georeference = navdata
+        self.georeference.from_dataframe(navdata)
+        if strip is True:
+            self.georeference.strip()
 
     def export_streams(self, filename: str = None):
         """Serializes and exports the dataset as a pickle object.
@@ -116,5 +124,5 @@ class Dataset:
     def showmap(self, **kwargs):
         """Overload to plotting.showmap that shows spatial information colorcoded by time.
         """
-        temp_df = self.georeference.assign(Data = 1)
+        temp_df = self.georeference.spacetime.assign(Data=1)
         maps.showmap(temp_df, **kwargs)

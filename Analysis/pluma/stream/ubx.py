@@ -25,13 +25,13 @@ class UbxStream(Stream):
                    event: str = "NAV-HPPOSLLH",
                    calibrate_clock: bool = True):
 		NavData = self.filter_event(event)
-		NavData.insert(NavData.shape[1], "Lat",
+		NavData.insert(NavData.shape[1], "Latitude",
                  NavData.apply(lambda x: x.Message.lat, axis=1),
                  False)
-		NavData.insert(NavData.shape[1], "Lon",
+		NavData.insert(NavData.shape[1], "Longitude",
                  NavData.apply(lambda x: x.Message.lon, axis=1),
                  False)
-		NavData.insert(NavData.shape[1], "Height",
+		NavData.insert(NavData.shape[1], "Elevation",
                  NavData.apply(lambda x: x.Message.height, axis=1),
                  False)
 		NavData.insert(NavData.shape[1], "Time_iTow",
