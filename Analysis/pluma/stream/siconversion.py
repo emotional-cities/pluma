@@ -1,11 +1,12 @@
 import pandas as pd
 
+
 class SiUnitConversion:
 
     def __init__(self,
-                 conversion_function : list = [],
-                 units : list = [],
-                 attempt_conversion = False
+                 conversion_function: list = [],
+                 units: list = [],
+                 attempt_conversion=False
                  ) -> None:
 
         self.conversion_function = conversion_function
@@ -13,8 +14,7 @@ class SiUnitConversion:
         self.attempt_conversion = attempt_conversion
         self.is_si = False
 
-
-    def validate_si_meta(self, data : pd.DataFrame) -> bool:
+    def validate_si_meta(self, data: pd.DataFrame) -> bool:
         n_handles = len(self.conversion_function)
         n_units = len(self.units)
         n_col = len(data.columns)
@@ -29,7 +29,7 @@ class SiUnitConversion:
         units' labels (={n_units}),\
             and DataFrame columns (={n_col}) must be the same")
 
-    def convert_to_si(self, df : pd.DataFrame) -> pd.DataFrame:
+    def convert_to_si(self, df: pd.DataFrame) -> pd.DataFrame:
         if self.is_si:
             raise AssertionError("Data is already in SI units.")
         else:
@@ -37,7 +37,9 @@ class SiUnitConversion:
             return self._apply_si_conversion(df)
 
     def _apply_si_conversion(self, df):
-        for col,fun in zip(df, self.conversion_function):
+        for col, fun in zip(df, self.conversion_function):
             df[col] = df[col].apply(fun)
-        df.columns = [f"{col}_{unit}" for col,unit in zip(df.columns, self.units)]
+        df.columns = [f"{col}_{unit}"
+                      for col, unit
+                      in zip(df.columns, self.units)]
         return df
