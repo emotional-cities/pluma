@@ -18,6 +18,12 @@ class SiUnitConversion:
         n_handles = len(self.conversion_function)
         n_units = len(self.units)
         n_col = len(data.columns)
+
+        if n_handles == 0:
+            raise AssertionError("No conversion function handles are set.")
+        if n_units == 0:
+            raise AssertionError("No conversion units are set.")
+
         if not(n_handles == n_units == n_col):
             raise AssertionError(f"Number of SI conversion handles (={n_handles}),\
         units' labels (={n_units}),\
