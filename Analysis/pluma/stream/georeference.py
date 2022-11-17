@@ -6,7 +6,7 @@ import warnings
 from shapely.errors import ShapelyDeprecationWarning
 warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 
-
+import pluma.plotting.export as plumaexport
 class Georeference():
 
     _georeference_header = ["Seconds", "Longitude", "Latitude", "Elevation"]
@@ -175,3 +175,11 @@ class Georeference():
 
     def __repr__(self) -> str:
         return repr(self.spacetime)
+
+    def export_kml(self,
+                   export_path:str = "walk.kml",
+                   **kwargs):
+        plumaexport.export_kml_line(
+            df=self.spacetime,
+            export_path=export_path,
+            **kwargs)
