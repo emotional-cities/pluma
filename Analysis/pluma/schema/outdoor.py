@@ -3,7 +3,7 @@ from dotmap import DotMap
 from pluma.stream.harp import HarpStream
 from pluma.stream.accelerometer import AccelerometerStream
 from pluma.stream.empatica import EmpaticaStream
-from pluma.stream.ubx import UbxStream
+from pluma.stream.ubx import UbxStream, _UBX_MSGIDS
 from pluma.stream.microphone import MicrophoneStream
 
 
@@ -88,7 +88,12 @@ def build_schema(root: str = None, autoload: bool = False) -> DotMap:
     streams.Microphone.BufferIndex =              HarpStream(222, device='Microphone', streamlabel='BufferIndex', root=root, autoload=autoload)
 
     # UBX streams
-    streams.UBX =                                 UbxStream(device='UBX', streamlabel='UBX', root=root, autoload=autoload)
+    streams.UBX =                                 UbxStream(device='UBX', streamlabel='UBX', root=root, autoload=autoload,
+                                                            autoload_messages=[
+                                                                _UBX_MSGIDS.NAV_HPPOSLLH,
+                                                                _UBX_MSGIDS.TIM_TM2,
+                                                                _UBX_MSGIDS.TIM_TP,
+                                                                ])
 
     return streams
 

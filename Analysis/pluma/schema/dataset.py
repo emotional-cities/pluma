@@ -98,7 +98,6 @@ class Dataset:
         self.streams = build_schema(root=root, autoload=autoload)
 
     def calibrate_ubx_to_harp(self,
-                              bitmask: int = 3,
                               dt_error: float = 0.002,
                               plot_diagnosis: bool = False,
                               r2_min_qc: float = 0.99):
@@ -106,23 +105,21 @@ class Dataset:
         as a reference.
 
         Args:
-            bitmask (int, optional): Bitmask (in decimal) of the digital output pin used for synchronization. Defaults to 3.
             dt_error (float, optional): Allowed error between the derivate of timestamps detected in the two streams. Defaults to 0.002 seconds.
-            plot_diagnosis (bool, optional): If True plots the output of the syncing algorihtm. Defaults to False.
+            plot_diagnosis (bool, optional): If True plots the output of the syncing algorithm. Defaults to False.
             r2_min_qc (float, optional): Quality control parameter.
-            If < r2_min_qc, an erorr will be raised, since it likely results from an automatic correction procedure. Defaults to 0.99.
+            If < r2_min_qc, an error will be raised, since it likely results from an automatic correction procedure. Defaults to 0.99.
         """
         self.streams.UBX.clock_calib_model =\
             get_clockcalibration_ubx_to_harp_clock(
                 ubx_stream=self.streams.UBX,
                 harp_sync=self.streams.BioData.Set.data,
-                bitmask=bitmask,
                 dt_error=dt_error,
                 r2_min_qc=r2_min_qc,
                 plot_diagnosis=plot_diagnosis)
 
     def showmap(self, **kwargs):
-        """Overload to plotting.showmap that shows spatial information colorcoded by time.
+        """Overload to plotting.showmap that shows spatial information color-coded by time.
         """
         temp_df = self.georeference.spacetime.assign(Data=1)
         maps.showmap(temp_df, **kwargs)

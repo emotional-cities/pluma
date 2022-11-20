@@ -9,9 +9,11 @@ from pluma.io.harp import _HARP_T0
 
 
 _UBX_CLASSES = Enum('_UBX_CLASSES',
-                    {x: x for x in ubx.UBX_CLASSES.values()})
+                    {x.replace('-','_'): x.replace('-', '_')
+                     for x in ubx.UBX_CLASSES.values()})
 _UBX_MSGIDS = Enum('_UBX_MSGIDS',
-                   {x: x for x in ubx.UBX_MSGIDS.values()})
+                   {x.replace('-','_'): x.replace('-', '_')
+                    for x in ubx.UBX_MSGIDS.values()})
 
 
 def read_ubx_file(path: str) -> pd.DataFrame:
@@ -38,7 +40,7 @@ def read_ubx_file(path: str) -> pd.DataFrame:
     print('Done.')
     return df
 
-
+@DeprecationWarning
 def filter_ubx_event(df: pd.DataFrame, event: str) -> pd.DataFrame:
     """Filters a UBX dataframe by the specified event (or "Identity") string.
 
@@ -55,7 +57,7 @@ def filter_ubx_event(df: pd.DataFrame, event: str) -> pd.DataFrame:
 def load_ubx_bin_event(root: str,
                        ubxmsgid: _UBX_MSGIDS,
                        ubxfolder: str = 'ubx',
-                       ext: str = '.bin') -> pd.DataFrame:
+                       ext: str = 'bin') -> pd.DataFrame:
     filename = f'{ubxfolder}\{ubxmsgid.value.upper()}.{ext}'
     return load_ubx_bin(filename, root)
 
@@ -63,7 +65,7 @@ def load_ubx_bin_event(root: str,
 def load_ubx_harp_ts_event(root: str,
                            ubxmsgid: _UBX_MSGIDS,
                            ubxfolder: str = 'ubx',
-                           ext: str = '.csv') -> pd.DataFrame:
+                           ext: str = 'csv') -> pd.DataFrame:
     filename = f'{ubxfolder}\{ubxmsgid.value.upper()}.{ext}'
     return load_ubx_harp_ts(filename, root)
 
@@ -129,8 +131,12 @@ def load_ubx_event_stream(ubxmsgid: _UBX_MSGIDS,
     Returns:
         pd.DataFrame: DataFrame indexed by the message times found in the output of load_ubx_harp_ts()
     """
-    bin_file = load_ubx_bin_event(ubxmsgid=ubxmsgid, root=root, ubxfolder=ubxfolder)
-    csv_file = load_ubx_harp_ts_event(ubxmsgid=ubxmsgid, root=root, ubxfolder=ubxfolder)
+    bin_file = load_ubx_bin_event(ubxmsgid=ubxmsgid,
+                                  root=root,
+                                  ubxfolder=ubxfolder)
+    csv_file = load_ubx_harp_ts_event(ubxmsgid=ubxmsgid,
+                                    root=root,
+                                    ubxfolder=ubxfolder)
     if (bin_file['Class'].values == csv_file['Class'].values).all():
         bin_file['Seconds'] = csv_file.index
         bin_file = bin_file.set_index('Seconds')
