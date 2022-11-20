@@ -2,7 +2,7 @@ import pandas as pd
 import simplekml
 
 
-def export_kml_line(df: pd.Dataframe,
+def export_kml_line(df: pd.DataFrame,
                     output_path: str = "walk.kml",
                     **kwargs):
     kml = simplekml.Kml()
