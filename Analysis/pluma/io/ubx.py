@@ -4,7 +4,14 @@ import warnings
 import pyubx2 as ubx
 import pandas as pd
 
+from enum import Enum
 from pluma.io.harp import _HARP_T0
+
+
+_UBX_CLASSES = Enum('_UBX_CLASSES',
+                    {x: x for x in ubx.UBX_CLASSES.values()})
+_UBX_MSGIDS = Enum('_UBX_MSGIDS',
+                   {x: x for x in ubx.UBX_MSGIDS.values()})
 
 
 def read_ubx_file(path: str) -> pd.DataFrame:
@@ -43,6 +50,22 @@ def filter_ubx_event(df: pd.DataFrame, event: str) -> pd.DataFrame:
         pd.DataFrame: _description_
     """
     return df.loc[df['Identity'] == event, :]
+
+
+def load_ubx_bin_event(root: str,
+                       ubxmsgid: _UBX_MSGIDS,
+                       ubxfolder: str = 'ubx',
+                       ext: str = '.bin') -> pd.DataFrame:
+    filename = f'{ubxfolder}\{ubxmsgid.value.upper()}.{ext}'
+    return load_ubx_bin(filename, root)
+
+
+def load_ubx_harp_ts_event(root: str,
+                           ubxmsgid: _UBX_MSGIDS,
+                           ubxfolder: str = 'ubx',
+                           ext: str = '.csv') -> pd.DataFrame:
+    filename = f'{ubxfolder}\{ubxmsgid.value.upper()}.{ext}'
+    return load_ubx_harp_ts(filename, root)
 
 
 def load_ubx_bin(filename: str = 'ubx.bin', root: str = '') -> pd.DataFrame:
@@ -90,6 +113,33 @@ def load_ubx_harp_ts(filename: str = 'ubx_harp_ts.csv', root: str = '') -> pd.Da
     return df
 
 
+def load_ubx_event_stream(ubxmsgid: _UBX_MSGIDS,
+                          root: str = '',
+                          ubxfolder: str = 'ubx') -> pd.DataFrame:
+    """Helper function that outputs the merge the outputs of load_ubx_bin_event() and load_ubx_harp_ts_event().
+    It additionally checks if, for each binary messages there exists the corresponding timestamped event.
+
+    Args:
+        ubxmsgid (_UBX_MSGIDS): _description_
+        root (str, optional): Root path for both .csv and .bin files. Defaults to ''.
+        ubxfolder (str, optional): Folder name of containing all ubxmsgid-separated binary files. Defaults to 'ubx'.
+    Raises:
+        ValueError: Raises an error if there is a mismatch between the two files.
+
+    Returns:
+        pd.DataFrame: DataFrame indexed by the message times found in the output of load_ubx_harp_ts()
+    """
+    bin_file = load_ubx_bin_event(ubxmsgid=ubxmsgid, root=root, ubxfolder=ubxfolder)
+    csv_file = load_ubx_harp_ts_event(ubxmsgid=ubxmsgid, root=root, ubxfolder=ubxfolder)
+    if (bin_file['Class'].values == csv_file['Class'].values).all():
+        bin_file['Seconds'] = csv_file.index
+        bin_file = bin_file.set_index('Seconds')
+        return bin_file
+    else:
+        raise ValueError('Misalignment found between CSV and UBX arrays.')
+
+
+@DeprecationWarning
 def load_ubx_stream(root: str = '') -> pd.DataFrame:
     """Helper function that outputs the merge the outputs of load_ubx_bin() and load_ubx_harp_ts().
     It additionally checks if, for each binary messages there exists the correspondent timestamped event.
