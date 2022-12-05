@@ -5,6 +5,7 @@ Packages
 *.dll
 *.exe
 *.exe.settings
+*.user
 Debug
 .vs
 .vscode
