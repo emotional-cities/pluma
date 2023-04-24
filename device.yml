@@ -33,11 +33,17 @@ registers:
         offset: 2
       Channel3:
         offset: 3
-  EcgData:
+  EcgAndAnalogData:
     address: 35
     access: Event
     type: U16
-    description: Stream containing data from Ecg sensor reads.
+    description: Stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
+    length: 2
+    payloadSpec:
+      Ecg:
+        offset: 0
+      AnalogData:
+        offset: 1
   GsrData:
     address: 36
     access: Event
