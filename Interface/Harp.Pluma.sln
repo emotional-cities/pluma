@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{65FBDC77-7C6B-450B-9678-88E50224C643}") = "Harp.Pluma", "Harp.Pluma\Harp.Pluma.csproj", "{3CE62588-C24C-489C-84DF-49F2215A4004}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CE62588-C24C-489C-84DF-49F2215A4004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CE62588-C24C-489C-84DF-49F2215A4004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CE62588-C24C-489C-84DF-49F2215A4004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CE62588-C24C-489C-84DF-49F2215A4004}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D211583E-7C1C-4406-9970-02E20D893F4C}
+	EndGlobalSection
+EndGlobal

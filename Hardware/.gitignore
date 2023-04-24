@@ -1,0 +1,57 @@
+bin
+obj
+Packages
+*.bin
+*.dll
+*.exe
+*.exe.settings
+*.user
+Debug
+.vs
+.vscode
+
+.ini
+
+# For PCBs designed using KiCad: https://www.kicad.org/
+# Format documentation: https://kicad.org/help/file-formats/
+
+# Generic backup files
+*~
+\#*
+.\#*
+
+# KiCad backup files
+*.bak
+*.bck
+*.kicad_pcb-bak
+
+# KiCad generated files
+*.erc
+*.net
+*-cache.lib
+*-rescue.lib
+
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups
+*.kicad_prl
+*.sch-bak
+*~
+_autosave-*
+*#
+*.tmp
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+
+# Exported BOM files
+*.xml
+*.csv
+
+# Python temp files
+__pycache__
+*.pyc
