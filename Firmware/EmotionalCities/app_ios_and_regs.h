@@ -51,7 +51,7 @@ typedef struct
 	uint8_t REG_STREAM_ENABLE;
 	uint8_t REG_STREAM_DISABLE;
 	uint8_t REG_STREAM_OXIMETER[4];
-	uint16_t REG_STREAM_ECG;
+	uint16_t REG_STREAM_ECG[2];
 	uint16_t REG_STREAM_GSR;
 	uint8_t REG_STREAM_MOTION;
 	uint8_t REG_INPUTS;
@@ -66,7 +66,7 @@ typedef struct
 #define ADD_REG_STREAM_ENABLE               32 // U8     Writing 1 to the bitmask starts the correspondent data stream
 #define ADD_REG_STREAM_DISABLE              33 // U8     Writing 1 to the bitmask stops the correspondent data stream
 #define ADD_REG_STREAM_OXIMETER             34 // U8     Contains the oximeter sensor data
-#define ADD_REG_STREAM_ECG                  35 // U16    Contains the Ecg analog data
+#define ADD_REG_STREAM_ECG                  35 // U16    Contains the Ecg analog data	& external Analog_In[0]
 #define ADD_REG_STREAM_GSR                  36 // U16    Contains the GSR analog data
 #define ADD_REG_STREAM_MOTION               37 // U8     Contains the motion sensor index
 #define ADD_REG_INPUTS                      38 // U8     Contains the state of the digital input
@@ -82,7 +82,7 @@ typedef struct
 /* Memory limits */
 #define APP_REGS_ADD_MIN                    0x20
 #define APP_REGS_ADD_MAX                    0x28
-#define APP_NBYTES_OF_REG_BANK              14
+#define APP_NBYTES_OF_REG_BANK              16
 
 /************************************************************************/
 /* Registers' bits                                                      */

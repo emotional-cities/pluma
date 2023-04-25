@@ -9,7 +9,7 @@ void init_ios(void)
 {	
 	/* Configure input pins */
 	//io_pin2out(&PORTA, 0, PULL_IO_UP, SENSE_IO_LOW_LEVEL);			// gets to be ADC 3V3 ref		open GPIO
-	io_pin2out(&PORTA, 1, PULL_IO_UP, SENSE_IO_LOW_LEVEL);				// open GPIO
+	//io_pin2out(&PORTA, 1, PULL_IO_UP, SENSE_IO_LOW_LEVEL);				// open GPIO
 	io_pin2out(&PORTA, 2, PULL_IO_DOWN, SENSE_IO_LOW_LEVEL);			// open GPIO
 	io_pin2out(&PORTA, 3, PULL_IO_TRISTATE, SENSE_IO_LOW_LEVEL);		// Aux_In_1
 	io_pin2out(&PORTA, 4, PULL_IO_TRISTATE, SENSE_IO_LOW_LEVEL);		// Aux_In_2
@@ -96,7 +96,7 @@ uint16_t app_regs_n_elements[] = {
 	1,
 	1,
 	4,
-	1,
+	2,
 	1,
 	1,
 	1,
@@ -108,7 +108,7 @@ uint8_t *app_regs_pointer[] = {
 	(uint8_t*)(&app_regs.REG_STREAM_ENABLE),
 	(uint8_t*)(&app_regs.REG_STREAM_DISABLE),
 	(uint8_t*)(app_regs.REG_STREAM_OXIMETER),
-	(uint8_t*)(&app_regs.REG_STREAM_ECG),
+	(uint8_t*)(app_regs.REG_STREAM_ECG),
 	(uint8_t*)(&app_regs.REG_STREAM_GSR),
 	(uint8_t*)(&app_regs.REG_STREAM_MOTION),
 	(uint8_t*)(&app_regs.REG_INPUTS),
