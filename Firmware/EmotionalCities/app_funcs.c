@@ -91,6 +91,7 @@ bool app_write_REG_STREAM_OXIMETER(void *a)
 /************************************************************************/
 /* REG_STREAM_ECG                                                       */
 /************************************************************************/
+// This register is an array with 2 positions
 void app_read_REG_STREAM_ECG(void)
 {
 	//app_regs.REG_STREAM_ECG = 0;
@@ -99,9 +100,9 @@ void app_read_REG_STREAM_ECG(void)
 
 bool app_write_REG_STREAM_ECG(void *a)
 {
-	uint16_t reg = *((uint16_t*)a);
+	uint16_t *reg = ((uint16_t*)a);
 
-	app_regs.REG_STREAM_ECG = reg;
+	app_regs.REG_STREAM_ECG[0] = reg[0];
 	return true;
 }
 

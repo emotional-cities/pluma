@@ -40,7 +40,7 @@ void hwbp_app_initialize(void)
     uint8_t hwH = 0;
     uint8_t hwL = 1;
     uint8_t fwH = 0;
-    uint8_t fwL = 4;
+    uint8_t fwL = 5;
     uint8_t ass = 0;
     
    	/* Start core */
@@ -235,14 +235,23 @@ void core_callback_t_1ms(void)
 	{
 		if ((ms_counter % 20) == 0)	// 50 Hz
 		{
-			app_regs.REG_STREAM_ECG = adc_A_read_channel(5);
-			if (app_regs.REG_STREAM_ECG < 0)
-				app_regs.REG_STREAM_ECG = 0;
+			app_regs.REG_STREAM_ECG[0] = adc_A_read_channel(5);
+			if (app_regs.REG_STREAM_ECG[0] < 0)
+				app_regs.REG_STREAM_ECG[0] = 0;
+			
+			app_regs.REG_STREAM_ECG[1] = adc_A_read_channel(1);
+			if (app_regs.REG_STREAM_ECG[1] < 0)
+				app_regs.REG_STREAM_ECG[1] = 0;
 			
 			core_func_send_event(ADD_REG_STREAM_ECG, false);
 		}
 		else
 		{
+			
+			app_regs.REG_STREAM_ECG[1] = adc_A_read_channel(1);
+			if (app_regs.REG_STREAM_ECG[1] < 0)
+				app_regs.REG_STREAM_ECG[1] = 0;
+			
 			core_func_send_event(ADD_REG_STREAM_ECG, false);
 		}
 	}
