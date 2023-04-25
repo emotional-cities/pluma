@@ -40,7 +40,7 @@ namespace Harp.Pluma
             { 32, typeof(StreamsEnable) },
             { 33, typeof(StreamsDisable) },
             { 34, typeof(OximeterData) },
-            { 35, typeof(EcgData) },
+            { 35, typeof(EcgAndAnalogData) },
             { 36, typeof(GsrData) },
             { 37, typeof(AccelerometerData) },
             { 38, typeof(PortDigitalInput) },
@@ -77,7 +77,7 @@ namespace Harp.Pluma
     /// <seealso cref="StreamsEnable"/>
     /// <seealso cref="StreamsDisable"/>
     /// <seealso cref="OximeterData"/>
-    /// <seealso cref="EcgData"/>
+    /// <seealso cref="EcgAndAnalogData"/>
     /// <seealso cref="GsrData"/>
     /// <seealso cref="AccelerometerData"/>
     /// <seealso cref="PortDigitalInput"/>
@@ -86,7 +86,7 @@ namespace Harp.Pluma
     [XmlInclude(typeof(StreamsEnable))]
     [XmlInclude(typeof(StreamsDisable))]
     [XmlInclude(typeof(OximeterData))]
-    [XmlInclude(typeof(EcgData))]
+    [XmlInclude(typeof(EcgAndAnalogData))]
     [XmlInclude(typeof(GsrData))]
     [XmlInclude(typeof(AccelerometerData))]
     [XmlInclude(typeof(PortDigitalInput))]
@@ -116,7 +116,7 @@ namespace Harp.Pluma
     /// <seealso cref="StreamsEnable"/>
     /// <seealso cref="StreamsDisable"/>
     /// <seealso cref="OximeterData"/>
-    /// <seealso cref="EcgData"/>
+    /// <seealso cref="EcgAndAnalogData"/>
     /// <seealso cref="GsrData"/>
     /// <seealso cref="AccelerometerData"/>
     /// <seealso cref="PortDigitalInput"/>
@@ -125,7 +125,7 @@ namespace Harp.Pluma
     [XmlInclude(typeof(StreamsEnable))]
     [XmlInclude(typeof(StreamsDisable))]
     [XmlInclude(typeof(OximeterData))]
-    [XmlInclude(typeof(EcgData))]
+    [XmlInclude(typeof(EcgAndAnalogData))]
     [XmlInclude(typeof(GsrData))]
     [XmlInclude(typeof(AccelerometerData))]
     [XmlInclude(typeof(PortDigitalInput))]
@@ -134,7 +134,7 @@ namespace Harp.Pluma
     [XmlInclude(typeof(TimestampedStreamsEnable))]
     [XmlInclude(typeof(TimestampedStreamsDisable))]
     [XmlInclude(typeof(TimestampedOximeterData))]
-    [XmlInclude(typeof(TimestampedEcgData))]
+    [XmlInclude(typeof(TimestampedEcgAndAnalogData))]
     [XmlInclude(typeof(TimestampedGsrData))]
     [XmlInclude(typeof(TimestampedAccelerometerData))]
     [XmlInclude(typeof(TimestampedPortDigitalInput))]
@@ -161,7 +161,7 @@ namespace Harp.Pluma
     /// <seealso cref="StreamsEnable"/>
     /// <seealso cref="StreamsDisable"/>
     /// <seealso cref="OximeterData"/>
-    /// <seealso cref="EcgData"/>
+    /// <seealso cref="EcgAndAnalogData"/>
     /// <seealso cref="GsrData"/>
     /// <seealso cref="AccelerometerData"/>
     /// <seealso cref="PortDigitalInput"/>
@@ -170,7 +170,7 @@ namespace Harp.Pluma
     [XmlInclude(typeof(StreamsEnable))]
     [XmlInclude(typeof(StreamsDisable))]
     [XmlInclude(typeof(OximeterData))]
-    [XmlInclude(typeof(EcgData))]
+    [XmlInclude(typeof(EcgAndAnalogData))]
     [XmlInclude(typeof(GsrData))]
     [XmlInclude(typeof(AccelerometerData))]
     [XmlInclude(typeof(PortDigitalInput))]
@@ -503,98 +503,116 @@ namespace Harp.Pluma
     }
 
     /// <summary>
-    /// Represents a register that stream containing data from Ecg sensor reads.
+    /// Represents a register that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
     /// </summary>
-    [Description("Stream containing data from Ecg sensor reads.")]
-    public partial class EcgData
+    [Description("Stream containing synchronized data from Ecg and general-purpose ADC sensor reads.")]
+    public partial class EcgAndAnalogData
     {
         /// <summary>
-        /// Represents the address of the <see cref="EcgData"/> register. This field is constant.
+        /// Represents the address of the <see cref="EcgAndAnalogData"/> register. This field is constant.
         /// </summary>
         public const int Address = 35;
 
         /// <summary>
-        /// Represents the payload type of the <see cref="EcgData"/> register. This field is constant.
+        /// Represents the payload type of the <see cref="EcgAndAnalogData"/> register. This field is constant.
         /// </summary>
         public const PayloadType RegisterType = PayloadType.U16;
 
         /// <summary>
-        /// Represents the length of the <see cref="EcgData"/> register. This field is constant.
+        /// Represents the length of the <see cref="EcgAndAnalogData"/> register. This field is constant.
         /// </summary>
-        public const int RegisterLength = 1;
+        public const int RegisterLength = 2;
+
+        static EcgAndAnalogDataPayload ParsePayload(ushort[] payload)
+        {
+            EcgAndAnalogDataPayload result;
+            result.Ecg = payload[0];
+            result.Adc = payload[1];
+            return result;
+        }
+
+        static ushort[] FormatPayload(EcgAndAnalogDataPayload value)
+        {
+            ushort[] result;
+            result = new ushort[2];
+            result[0] = value.Ecg;
+            result[1] = value.Adc;
+            return result;
+        }
 
         /// <summary>
-        /// Returns the payload data for <see cref="EcgData"/> register messages.
+        /// Returns the payload data for <see cref="EcgAndAnalogData"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the message payload.</returns>
-        public static ushort GetPayload(HarpMessage message)
+        public static EcgAndAnalogDataPayload GetPayload(HarpMessage message)
         {
-            return message.GetPayloadUInt16();
+            return ParsePayload(message.GetPayloadArray<ushort>());
         }
 
         /// <summary>
-        /// Returns the timestamped payload data for <see cref="EcgData"/> register messages.
+        /// Returns the timestamped payload data for <see cref="EcgAndAnalogData"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<ushort> GetTimestampedPayload(HarpMessage message)
+        public static Timestamped<EcgAndAnalogDataPayload> GetTimestampedPayload(HarpMessage message)
         {
-            return message.GetTimestampedPayloadUInt16();
+            var payload = message.GetTimestampedPayloadArray<ushort>();
+            return Timestamped.Create(ParsePayload(payload.Value), payload.Seconds);
         }
 
         /// <summary>
-        /// Returns a Harp message for the <see cref="EcgData"/> register.
+        /// Returns a Harp message for the <see cref="EcgAndAnalogData"/> register.
         /// </summary>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="EcgData"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="EcgAndAnalogData"/> register
         /// with the specified message type and payload.
         /// </returns>
-        public static HarpMessage FromPayload(MessageType messageType, ushort value)
+        public static HarpMessage FromPayload(MessageType messageType, EcgAndAnalogDataPayload value)
         {
-            return HarpMessage.FromUInt16(Address, messageType, value);
+            return HarpMessage.FromUInt16(Address, messageType, FormatPayload(value));
         }
 
         /// <summary>
-        /// Returns a timestamped Harp message for the <see cref="EcgData"/>
+        /// Returns a timestamped Harp message for the <see cref="EcgAndAnalogData"/>
         /// register.
         /// </summary>
         /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
         /// <param name="messageType">The type of the Harp message.</param>
         /// <param name="value">The value to be stored in the message payload.</param>
         /// <returns>
-        /// A <see cref="HarpMessage"/> object for the <see cref="EcgData"/> register
+        /// A <see cref="HarpMessage"/> object for the <see cref="EcgAndAnalogData"/> register
         /// with the specified message type, timestamp, and payload.
         /// </returns>
-        public static HarpMessage FromPayload(double timestamp, MessageType messageType, ushort value)
+        public static HarpMessage FromPayload(double timestamp, MessageType messageType, EcgAndAnalogDataPayload value)
         {
-            return HarpMessage.FromUInt16(Address, timestamp, messageType, value);
+            return HarpMessage.FromUInt16(Address, timestamp, messageType, FormatPayload(value));
         }
     }
 
     /// <summary>
     /// Provides methods for manipulating timestamped messages from the
-    /// EcgData register.
+    /// EcgAndAnalogData register.
     /// </summary>
-    /// <seealso cref="EcgData"/>
-    [Description("Filters and selects timestamped messages from the EcgData register.")]
-    public partial class TimestampedEcgData
+    /// <seealso cref="EcgAndAnalogData"/>
+    [Description("Filters and selects timestamped messages from the EcgAndAnalogData register.")]
+    public partial class TimestampedEcgAndAnalogData
     {
         /// <summary>
-        /// Represents the address of the <see cref="EcgData"/> register. This field is constant.
+        /// Represents the address of the <see cref="EcgAndAnalogData"/> register. This field is constant.
         /// </summary>
-        public const int Address = EcgData.Address;
+        public const int Address = EcgAndAnalogData.Address;
 
         /// <summary>
-        /// Returns timestamped payload data for <see cref="EcgData"/> register messages.
+        /// Returns timestamped payload data for <see cref="EcgAndAnalogData"/> register messages.
         /// </summary>
         /// <param name="message">A <see cref="HarpMessage"/> object representing the register message.</param>
         /// <returns>A value representing the timestamped message payload.</returns>
-        public static Timestamped<ushort> GetPayload(HarpMessage message)
+        public static Timestamped<EcgAndAnalogDataPayload> GetPayload(HarpMessage message)
         {
-            return EcgData.GetTimestampedPayload(message);
+            return EcgAndAnalogData.GetTimestampedPayload(message);
         }
     }
 
@@ -1088,7 +1106,7 @@ namespace Harp.Pluma
     /// <seealso cref="CreateStreamsEnablePayload"/>
     /// <seealso cref="CreateStreamsDisablePayload"/>
     /// <seealso cref="CreateOximeterDataPayload"/>
-    /// <seealso cref="CreateEcgDataPayload"/>
+    /// <seealso cref="CreateEcgAndAnalogDataPayload"/>
     /// <seealso cref="CreateGsrDataPayload"/>
     /// <seealso cref="CreateAccelerometerDataPayload"/>
     /// <seealso cref="CreatePortDigitalInputPayload"/>
@@ -1097,7 +1115,7 @@ namespace Harp.Pluma
     [XmlInclude(typeof(CreateStreamsEnablePayload))]
     [XmlInclude(typeof(CreateStreamsDisablePayload))]
     [XmlInclude(typeof(CreateOximeterDataPayload))]
-    [XmlInclude(typeof(CreateEcgDataPayload))]
+    [XmlInclude(typeof(CreateEcgAndAnalogDataPayload))]
     [XmlInclude(typeof(CreateGsrDataPayload))]
     [XmlInclude(typeof(CreateAccelerometerDataPayload))]
     [XmlInclude(typeof(CreatePortDigitalInputPayload))]
@@ -1289,22 +1307,28 @@ namespace Harp.Pluma
 
     /// <summary>
     /// Represents an operator that creates a sequence of message payloads
-    /// that stream containing data from Ecg sensor reads.
+    /// that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
     /// </summary>
-    [DisplayName("EcgDataPayload")]
+    [DisplayName("EcgAndAnalogDataPayload")]
     [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that stream containing data from Ecg sensor reads.")]
-    public partial class CreateEcgDataPayload : HarpCombinator
+    [Description("Creates a sequence of message payloads that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.")]
+    public partial class CreateEcgAndAnalogDataPayload : HarpCombinator
     {
         /// <summary>
-        /// Gets or sets the value that stream containing data from Ecg sensor reads.
+        /// Gets or sets a value to write on payload member Ecg.
         /// </summary>
-        [Description("The value that stream containing data from Ecg sensor reads.")]
-        public ushort Value { get; set; }
+        [Description("")]
+        public ushort Ecg { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value to write on payload member Adc.
+        /// </summary>
+        [Description("")]
+        public ushort Adc { get; set; }
 
         /// <summary>
         /// Creates an observable sequence that contains a single message
-        /// that stream containing data from Ecg sensor reads.
+        /// that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
         /// </summary>
         /// <returns>
         /// A sequence containing a single <see cref="HarpMessage"/> object
@@ -1317,7 +1341,7 @@ namespace Harp.Pluma
 
         /// <summary>
         /// Creates an observable sequence of message payloads
-        /// that stream containing data from Ecg sensor reads.
+        /// that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
         /// </summary>
         /// <typeparam name="TSource">
         /// The type of the elements in the <paramref name="source"/> sequence.
@@ -1331,7 +1355,13 @@ namespace Harp.Pluma
         /// </returns>
         public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
         {
-            return source.Select(_ => EcgData.FromPayload(MessageType, Value));
+            return source.Select(_ =>
+            {
+                EcgAndAnalogDataPayload value;
+                value.Ecg = Ecg;
+                value.Adc = Adc;
+                return EcgAndAnalogData.FromPayload(MessageType, value);
+            });
         }
     }
 
@@ -1618,6 +1648,35 @@ namespace Harp.Pluma
         /// 
         /// </summary>
         public byte Channel3;
+    }
+
+    /// <summary>
+    /// Represents the payload of the EcgAndAnalogData register.
+    /// </summary>
+    public struct EcgAndAnalogDataPayload
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EcgAndAnalogDataPayload"/> structure.
+        /// </summary>
+        /// <param name="ecg"></param>
+        /// <param name="adc"></param>
+        public EcgAndAnalogDataPayload(
+            ushort ecg,
+            ushort adc)
+        {
+            Ecg = ecg;
+            Adc = adc;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ushort Ecg;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ushort Adc;
     }
 
     /// <summary>

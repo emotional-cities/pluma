@@ -145,29 +145,29 @@ namespace Harp.Pluma
         }
 
         /// <summary>
-        /// Asynchronously reads the contents of the EcgData register.
+        /// Asynchronously reads the contents of the EcgAndAnalogData register.
         /// </summary>
         /// <returns>
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the register payload.
         /// </returns>
-        public async Task<ushort> ReadEcgDataAsync()
+        public async Task<EcgAndAnalogDataPayload> ReadEcgAndAnalogDataAsync()
         {
-            var reply = await CommandAsync(HarpCommand.ReadUInt16(EcgData.Address));
-            return EcgData.GetPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadUInt16(EcgAndAnalogData.Address));
+            return EcgAndAnalogData.GetPayload(reply);
         }
 
         /// <summary>
-        /// Asynchronously reads the timestamped contents of the EcgData register.
+        /// Asynchronously reads the timestamped contents of the EcgAndAnalogData register.
         /// </summary>
         /// <returns>
         /// A task that represents the asynchronous read operation. The <see cref="Task{TResult}.Result"/>
         /// property contains the timestamped register payload.
         /// </returns>
-        public async Task<Timestamped<ushort>> ReadTimestampedEcgDataAsync()
+        public async Task<Timestamped<EcgAndAnalogDataPayload>> ReadTimestampedEcgAndAnalogDataAsync()
         {
-            var reply = await CommandAsync(HarpCommand.ReadUInt16(EcgData.Address));
-            return EcgData.GetTimestampedPayload(reply);
+            var reply = await CommandAsync(HarpCommand.ReadUInt16(EcgAndAnalogData.Address));
+            return EcgAndAnalogData.GetTimestampedPayload(reply);
         }
 
         /// <summary>
