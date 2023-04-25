@@ -3,7 +3,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/harp-tech/reflex-generator/main/schema/device.json
 device: Pluma
 whoAmI: 2110
-firmwareVersion: "0.3"
+firmwareVersion: "0.5"
 hardwareTargets: "0.1"
 registers:
   StreamsEnable:
