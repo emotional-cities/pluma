@@ -42,7 +42,7 @@ registers:
     payloadSpec:
       Ecg:
         offset: 0
-      AnalogData:
+      Adc:
         offset: 1
   GsrData:
     address: 36
