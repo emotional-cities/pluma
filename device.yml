@@ -1,0 +1,90 @@
+%YAML 1.1
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/harp-tech/reflex-generator/main/schema/device.json
+device: Pluma
+whoAmI: 2110
+firmwareVersion: "0.5"
+hardwareTargets: "0.1"
+registers:
+  StreamsEnable:
+    address: 32
+    access: Write
+    type: U8
+    maskType: Streams
+    description: Enables the generation of events for the respective streams.
+  StreamsDisable:
+    address: 33
+    access: Write
+    type: U8
+    maskType: Streams
+    description: Disables the generation of events for the respective streams.
+  OximeterData:
+    address: 34
+    access: Event
+    type: U8
+    description: Stream containing data from Oximeter sensor reads.
+    length: 4
+    payloadSpec:
+      Channel0:
+        offset: 0
+      Channel1:
+        offset: 1
+      Channel2:
+        offset: 2
+      Channel3:
+        offset: 3
+  EcgAndAnalogData:
+    address: 35
+    access: Event
+    type: U16
+    description: Stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
+    length: 2
+    payloadSpec:
+      Ecg:
+        offset: 0
+      Adc:
+        offset: 1
+  GsrData:
+    address: 36
+    access: Event
+    type: U16
+    description: Stream containing data from Gsr sensor reads.
+  AccelerometerData:
+    address: 37
+    access: Event
+    type: U8
+    description: Stream that generates an event on each triggered acquisition by the external accelerometer board.
+  PortDigitalInput:
+    address: 38
+    access: Event
+    type: U8
+    maskType: DigitalInputs
+    description: Reflects the state of DI digital lines of each Port
+  OutputSet: &output
+    address: 39
+    type: U8
+    access: Write
+    maskType: DigitalOutputs
+    description: Set the specified digital output lines.
+  OutputClear:
+    <<: *output
+    address: 40
+    description: Clear the specified digital output lines
+bitMasks:
+  Streams:
+    description: Avaialble streams in the device.
+    bits  :
+      Oximeter: 0x1
+      Ecg: 0x2
+      Gsr: 0x4
+      Accelerometer: 0x8
+  DigitalInputs:
+    description: Specifies the state of port digital input lines.
+    bits:
+      DI0: 0x1
+      DI1: 0x2
+  DigitalOutputs:
+    description: Specifies the state of port digital output lines.
+    bits:
+      DO0: 0x1
+      DO1: 0x2
