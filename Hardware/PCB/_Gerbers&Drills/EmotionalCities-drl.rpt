@@ -1,0 +1,33 @@
+Drill report for EmotionalCities_v.1.1.kicad_pcb
+Created on 20/07/2023 14:33:17
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  Top                       front
+    L2 :  In1.Cu                    in1
+    L3 :  In2.Cu                    in2
+    L4 :  Bottom                    back
+
+
+Drill file 'EmotionalCities_v.1.1-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.350mm  0.0138"  (361 holes)
+    T2  0.600mm  0.0236"  (2 holes)
+    T3  0.700mm  0.0276"  (4 holes)
+    T4  1.000mm  0.0394"  (44 holes)
+    T5  1.016mm  0.0400"  (51 holes)
+    T6  1.200mm  0.0472"  (7 holes)
+    T7  1.500mm  0.0591"  (4 holes)
+
+    Total plated holes count 473
+
+
+Drill file 'EmotionalCities_v.1.1-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  1.000mm  0.0394"  (4 holes)
+    T2  3.200mm  0.1260"  (5 holes)
+    T3  3.302mm  0.1300"  (4 holes)
+
+    Total unplated holes count 13
