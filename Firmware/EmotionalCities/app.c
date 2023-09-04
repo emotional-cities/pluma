@@ -25,7 +25,7 @@ extern i2c_dev_t oximeter;
 /************************************************************************/
 /* Initialize app                                                       */
 /************************************************************************/
-static const uint8_t default_device_name[] = "BioReader";
+static const uint8_t default_device_name[] = "Pluma";
 uint16_t heartRate;
 uint8_t confidence;
 uint16_t oxygen;
