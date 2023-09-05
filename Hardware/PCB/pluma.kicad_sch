@@ -4710,7 +4710,7 @@
     (pin "7" (uuid 73e808c6-1b78-447f-9b29-7af34b1a1b84))
     (pin "9" (uuid 4e8cbbdb-9f3e-4b34-9a90-fb29452bd8fb))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "IC3") (unit 1)
         )
@@ -4735,7 +4735,7 @@
     )
     (pin "1" (uuid 6c35c6e9-1b66-4963-98d2-ba7bff6fdfea))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0101") (unit 1)
         )
@@ -4760,7 +4760,7 @@
     )
     (pin "1" (uuid f12a0275-f0c8-4451-ad30-655c4b120167))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0102") (unit 1)
         )
@@ -4795,7 +4795,7 @@
     (pin "1" (uuid 83492004-1db1-499b-9b2b-155f417e31ef))
     (pin "2" (uuid e9182b48-ddf0-4ad2-9524-037a90d225eb))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C3") (unit 1)
         )
@@ -4830,7 +4830,7 @@
     (pin "1" (uuid d610815f-9b4e-4465-8781-72bfbe4cd8ef))
     (pin "2" (uuid 1b214fe8-556f-4ca5-b993-2260d56319ae))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C6") (unit 1)
         )
@@ -4865,7 +4865,7 @@
     (pin "1" (uuid a47ba311-59d6-47ca-a4a3-3a7fbbe55adb))
     (pin "2" (uuid 7e1e864e-109b-4cfe-bc91-2d87b74892a1))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C4") (unit 1)
         )
@@ -4890,7 +4890,7 @@
     )
     (pin "1" (uuid 39b6c653-dd67-430e-9833-dfa16776c43f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0103") (unit 1)
         )
@@ -4915,7 +4915,7 @@
     )
     (pin "1" (uuid 2473b555-6398-4c0d-9c39-8ae7586d6d93))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0104") (unit 1)
         )
@@ -4940,7 +4940,7 @@
     )
     (pin "1" (uuid fccb631e-dbfa-4b67-98ab-756f3518ea20))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0105") (unit 1)
         )
@@ -4965,7 +4965,7 @@
     )
     (pin "1" (uuid da41814c-6bc4-45b0-a74e-b0d9c9724ee6))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0106") (unit 1)
         )
@@ -5000,7 +5000,7 @@
     (pin "1" (uuid 9e6727df-d97e-4a36-9d58-96f3f189090b))
     (pin "2" (uuid ab1ede52-8daa-49a7-9ad7-3b0043f457f7))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C5") (unit 1)
         )
@@ -5035,7 +5035,7 @@
     (pin "1" (uuid 83eb8e8f-c543-4db9-b4cb-18c0d0e089e6))
     (pin "2" (uuid 7fab7cd4-f0ab-46bb-a4b6-d747dc6ff522))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C9") (unit 1)
         )
@@ -5070,7 +5070,7 @@
     (pin "1" (uuid 7d7aa04f-3986-4136-8eaa-6a0036a5f354))
     (pin "2" (uuid dee3290c-1101-4cd9-acb5-22553b704447))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C52") (unit 1)
         )
@@ -5095,7 +5095,7 @@
     )
     (pin "1" (uuid f52f4a88-fb0a-41fc-9274-81c1d74bd20d))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0107") (unit 1)
         )
@@ -5120,7 +5120,7 @@
     )
     (pin "1" (uuid eed063ce-9e4a-479e-bba9-a1a7b44826db))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0108") (unit 1)
         )
@@ -5145,7 +5145,7 @@
     )
     (pin "1" (uuid 1a75dcbd-9248-4840-a0b0-bebce65b1071))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0109") (unit 1)
         )
@@ -5180,7 +5180,7 @@
     (pin "1" (uuid fccc4126-fbd3-42f9-ac00-0439169cf176))
     (pin "2" (uuid 0b51dc7d-210f-43ae-a02d-27fc1a7a5616))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C7") (unit 1)
         )
@@ -5205,7 +5205,7 @@
     )
     (pin "1" (uuid 1e3aeaca-95bb-4bb8-b825-bb087d8eb954))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0110") (unit 1)
         )
@@ -5230,7 +5230,7 @@
     )
     (pin "1" (uuid ab22f903-ccf5-40e9-ac5d-48c4f3130957))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0111") (unit 1)
         )
@@ -5255,7 +5255,7 @@
     )
     (pin "1" (uuid 8142e937-d909-4805-95ca-693e07954f1a))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0112") (unit 1)
         )
@@ -5290,7 +5290,7 @@
     (pin "1" (uuid bca12d3d-087d-4444-b8ca-bc82f703456b))
     (pin "2" (uuid 6dcb5a0e-4a89-42e2-899e-8638e338143e))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C2") (unit 1)
         )
@@ -5325,7 +5325,7 @@
     (pin "1" (uuid 77b4de99-cd4f-42af-833a-ae187a699868))
     (pin "2" (uuid 36b9c3f1-5558-42bb-970b-4ba88cfbb4eb))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R69") (unit 1)
         )
@@ -5360,7 +5360,7 @@
     (pin "1" (uuid f0bc1606-0b97-4850-bfc5-949f2ee0bd21))
     (pin "2" (uuid 6cd8d140-3b6c-42b8-8609-f6663eb82b02))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R12") (unit 1)
         )
@@ -5395,7 +5395,7 @@
     (pin "1" (uuid a9b56e22-5f69-46f5-aa3e-3d002b752328))
     (pin "2" (uuid 277f212c-0bf8-42a3-9ab9-9947e31df0d8))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R11") (unit 1)
         )
@@ -5472,7 +5472,7 @@
     (pin "8" (uuid 5e6deddf-3373-4924-a7cb-c83f3167a28c))
     (pin "9" (uuid fb78870f-53b9-4844-ae68-0f8d09a8213b))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "U6") (unit 1)
         )
@@ -5489,7 +5489,7 @@
     (property "Value" "USB_B_Mini" (at 114.4778 153.0096 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:mini_USB" (at 116.84 163.83 0)
+    (property "Footprint" "pluma Lybrary:mini_USB" (at 116.84 163.83 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 116.84 163.83 0)
@@ -5511,7 +5511,7 @@
     (pin "5" (uuid ae5327a1-8c16-4293-b41b-34730c0d8042))
     (pin "6" (uuid 5f9b6971-e279-4da0-b09a-e9c33a35e086))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "J1") (unit 1)
         )
@@ -5550,7 +5550,7 @@
     (pin "5" (uuid ecfbe19b-6d2b-4864-9e10-d6c0aa859a5c))
     (pin "6" (uuid 25a1bc34-8e80-4d05-ada7-045e92d4af98))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "IC2") (unit 1)
         )
@@ -5575,7 +5575,7 @@
     )
     (pin "1" (uuid 5df2903d-639f-40e3-b789-e86bdb880db4))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR011") (unit 1)
         )
@@ -5610,7 +5610,7 @@
     (pin "1" (uuid d14dbad0-4a3e-4237-b8f2-25922a7e2faf))
     (pin "2" (uuid cc40911f-f634-4510-bd9d-60d8851bb126))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R13") (unit 1)
         )
@@ -5645,7 +5645,7 @@
     (pin "1" (uuid 9c5e98c9-6d50-48ae-bde7-2732779a46c1))
     (pin "2" (uuid 4cdc7c53-469e-43e5-8b38-4ea71c5641e9))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R14") (unit 1)
         )
@@ -5670,7 +5670,7 @@
     )
     (pin "1" (uuid ce4ae913-dffa-478d-9007-df94298877e2))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR01") (unit 1)
         )
@@ -5695,7 +5695,7 @@
     )
     (pin "1" (uuid 91010e5e-d092-4b0b-9bc0-8a637e0754f5))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR029") (unit 1)
         )
@@ -5720,7 +5720,7 @@
     )
     (pin "1" (uuid 70f1da94-ec46-449f-b6d4-2c10f017f3b8))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR028") (unit 1)
         )
@@ -5754,7 +5754,7 @@
     )
     (pin "1" (uuid 93a86aa4-df23-48f7-8117-dabb54dac114))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "SCL_portC1") (unit 1)
         )
@@ -5788,7 +5788,7 @@
     )
     (pin "1" (uuid 323b5f2e-1efb-48b5-819b-ef6a6692bed6))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "SDA_portC1") (unit 1)
         )
@@ -5805,7 +5805,7 @@
     (property "Value" "Motion_Sensor_Module_BNO055 #1_conn" (at 151.765 434.975 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:MQ172_4pin" (at 152.4 443.865 0)
+    (property "Footprint" "pluma Lybrary:MQ172_4pin" (at 152.4 443.865 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 135.89 398.145 0)
@@ -5826,7 +5826,7 @@
     (pin "4" (uuid fcd3a0d3-e2b7-4bb3-8039-1474b9e3dae6))
     (pin "5" (uuid 767079a9-48bc-4a93-8ee8-6077db007295))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "U7") (unit 1)
         )
@@ -5860,7 +5860,7 @@
     )
     (pin "1" (uuid 8cc17a54-1398-49f7-b984-1f638274971f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "SCL_portE1") (unit 1)
         )
@@ -5894,7 +5894,7 @@
     )
     (pin "1" (uuid 2ee31cc5-dc38-4ebb-a5e5-d1c5a464ae9e))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "SDA_portE1") (unit 1)
         )
@@ -5929,7 +5929,7 @@
     (pin "1" (uuid ba3b9f40-4f04-4945-ae7e-965bb6101eef))
     (pin "2" (uuid acdb3902-5797-4713-867e-183566830ace))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R37") (unit 1)
         )
@@ -5954,7 +5954,7 @@
     )
     (pin "1" (uuid ed61817b-4703-4594-aff5-ba2667c873fe))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0149") (unit 1)
         )
@@ -5987,7 +5987,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "H1") (unit 1)
         )
@@ -6020,7 +6020,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "H2") (unit 1)
         )
@@ -6053,7 +6053,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "H3") (unit 1)
         )
@@ -6078,7 +6078,7 @@
     )
     (pin "1" (uuid 6bb25463-cc7c-405c-a50d-1edb84ec0a41))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR07") (unit 1)
         )
@@ -6103,7 +6103,7 @@
     )
     (pin "1" (uuid 96ab0922-e079-4955-b436-c570652b1293))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR08") (unit 1)
         )
@@ -6138,7 +6138,7 @@
     (pin "1" (uuid 63358072-b431-4c9d-a28b-78a07e890551))
     (pin "2" (uuid a41f1d0c-5335-4940-ad31-94a4a4a78878))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R19") (unit 1)
         )
@@ -6173,7 +6173,7 @@
     (pin "1" (uuid 1ee7c458-d9b1-4d09-8cfc-c9fe5c6e98ee))
     (pin "2" (uuid 3ab9dd39-d631-434c-a279-de8bd980acc9))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R20") (unit 1)
         )
@@ -6198,7 +6198,7 @@
     )
     (pin "1" (uuid 117ba327-7df3-4220-a863-3f1d8991f501))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0160") (unit 1)
         )
@@ -6223,7 +6223,7 @@
     )
     (pin "1" (uuid bf6f4bd0-a546-4ac1-a1b3-4617acf37fc0))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR030") (unit 1)
         )
@@ -6261,7 +6261,7 @@
     (pin "4" (uuid 00dd8f20-0440-4599-a6f2-2742788bafb9))
     (pin "5" (uuid e4f29b50-73f9-42c7-aadc-3661d13a9d32))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "U8") (unit 1)
         )
@@ -6302,7 +6302,7 @@
     (pin "7" (uuid 94c80b57-900b-49c2-99ef-776906d13c2e))
     (pin "8" (uuid 30b7d86e-d152-40f7-9c2e-666f5d60d023))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "U10") (unit 1)
         )
@@ -6327,7 +6327,7 @@
     )
     (pin "1" (uuid 8936594c-db5f-47da-86bd-993ba726aeed))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR031") (unit 1)
         )
@@ -6352,7 +6352,7 @@
     )
     (pin "1" (uuid 647f55e4-d986-46d8-9ba2-096911aa11e8))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR033") (unit 1)
         )
@@ -6377,7 +6377,7 @@
     )
     (pin "1" (uuid 319b4f64-0331-412d-8684-1d26a3e100eb))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR032") (unit 1)
         )
@@ -6402,7 +6402,7 @@
     )
     (pin "1" (uuid 235f2c59-08c3-4cc5-810b-d3ae6ca9e416))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR09") (unit 1)
         )
@@ -6437,7 +6437,7 @@
     (pin "1" (uuid 47d659a7-4658-4f24-a795-ecc9eb32200f))
     (pin "2" (uuid 656b795a-ef9a-4bb0-96b6-c30140c80f24))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R15") (unit 1)
         )
@@ -6472,7 +6472,7 @@
     (pin "1" (uuid e26a503d-62ae-4b7e-87fe-b0a742db638d))
     (pin "2" (uuid 07ec8892-6b4f-4fae-a4f0-69861a5a3eb6))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R18") (unit 1)
         )
@@ -6497,7 +6497,7 @@
     )
     (pin "1" (uuid 8953b9d9-373d-454d-bae9-33cbf26af19e))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0119") (unit 1)
         )
@@ -6522,7 +6522,7 @@
     )
     (pin "1" (uuid 68259d6b-9884-430f-a0ab-5118d0c0d31f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR06") (unit 1)
         )
@@ -6560,7 +6560,7 @@
     (pin "4" (uuid cdf45d6c-f81d-4f73-b1df-c2f7bf1c0854))
     (pin "5" (uuid 242689ee-a241-4d58-b8e7-4941718e008f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "IC1") (unit 1)
         )
@@ -6595,7 +6595,7 @@
     (pin "1" (uuid 3c88bf58-c3e9-47a8-99e0-37694e84494d))
     (pin "2" (uuid 09b844c5-60ee-4ea5-be34-d1fd458d3609))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C26") (unit 1)
         )
@@ -6620,7 +6620,7 @@
     )
     (pin "1" (uuid cdfdecf0-cfd8-4b6c-b363-70ba0b571f15))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR045") (unit 1)
         )
@@ -6645,7 +6645,7 @@
     )
     (pin "1" (uuid 073cf23d-bc1b-4ef8-b3d6-53b1e78bc024))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR025") (unit 1)
         )
@@ -6680,7 +6680,7 @@
     (pin "1" (uuid 5f6fc30e-65d0-440c-93bf-7b9a65171615))
     (pin "2" (uuid bec7f869-0f8f-4b95-9272-57700116f102))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R5") (unit 1)
         )
@@ -6715,7 +6715,7 @@
     (pin "1" (uuid cd21827b-145d-4fa9-bc89-f38e4cb67c44))
     (pin "2" (uuid e2b024e2-3ea6-4048-85fc-51d4e41b546f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R4") (unit 1)
         )
@@ -6740,7 +6740,7 @@
     )
     (pin "1" (uuid dd4392b0-82d6-474e-aa70-0a020dafb938))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR02") (unit 1)
         )
@@ -6765,7 +6765,7 @@
     )
     (pin "1" (uuid b175931e-27ce-4efd-b014-32ef9d2c27e5))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR03") (unit 1)
         )
@@ -6790,7 +6790,7 @@
     )
     (pin "1" (uuid aa43197e-cba8-4c92-a6a2-270ec3914ce2))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR049") (unit 1)
         )
@@ -6825,7 +6825,7 @@
     (pin "1" (uuid 5f829f04-eea2-4a73-98b7-592c2fc86255))
     (pin "2" (uuid 74bd4264-9520-415f-89bb-5f1ff86b7d8d))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C28") (unit 1)
         )
@@ -6860,7 +6860,7 @@
     (pin "1" (uuid be47875a-419b-433d-93a7-9cd016433154))
     (pin "2" (uuid d56fbdbb-a112-45f7-821b-92d815e44818))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C29") (unit 1)
         )
@@ -6885,7 +6885,7 @@
     )
     (pin "1" (uuid 47fc8e74-46a5-440b-81ca-e5508aae7869))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR051") (unit 1)
         )
@@ -6910,7 +6910,7 @@
     )
     (pin "1" (uuid 17b75ff9-4c61-465c-b1ca-ba2c81c048a9))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR050") (unit 1)
         )
@@ -6944,7 +6944,7 @@
     )
     (pin "1" (uuid 6081a235-9047-459a-8cd8-69810764eca5))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "GPS_RXI1") (unit 1)
         )
@@ -6979,7 +6979,7 @@
     (pin "1" (uuid cc97f615-fcd8-48d3-82b4-ac9b29eb44ca))
     (pin "2" (uuid 3f552247-44df-460d-b4e7-01d8618f047d))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R26") (unit 1)
         )
@@ -7004,7 +7004,7 @@
     )
     (pin "1" (uuid b63eaf31-0862-4021-9e13-12e31f182b06))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR055") (unit 1)
         )
@@ -7038,7 +7038,7 @@
     )
     (pin "1" (uuid 0e369ecc-db10-490c-bd81-d48297aeed11))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "GPS_TXO1") (unit 1)
         )
@@ -7073,7 +7073,7 @@
     (pin "1" (uuid f5e12062-b98e-4bff-8fc2-410171bfe159))
     (pin "2" (uuid f0e8dd4e-7656-4bac-9ed4-56414271fe84))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R24") (unit 1)
         )
@@ -7108,7 +7108,7 @@
     (pin "1" (uuid 4fcd4ed5-889a-48a7-8776-6ef791587fa8))
     (pin "2" (uuid 5e3e43c7-07a2-44c6-9342-291b8d2a3f22))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C27") (unit 1)
         )
@@ -7133,7 +7133,7 @@
     )
     (pin "1" (uuid 4b0f9bbd-40b4-4777-99c3-99afca129cb6))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR048") (unit 1)
         )
@@ -7168,7 +7168,7 @@
     (pin "1" (uuid 54d4eee8-5f43-4d5b-ad9f-7d835f23e738))
     (pin "2" (uuid a4920262-78f0-4ffe-b28c-5c22a6b1f626))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C32") (unit 1)
         )
@@ -7203,7 +7203,7 @@
     (pin "1" (uuid 818d009b-162e-4afc-a09b-3eefceef0524))
     (pin "2" (uuid 56d18852-fbeb-40d8-b38f-165fb594b224))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C39") (unit 1)
         )
@@ -7238,7 +7238,7 @@
     (pin "1" (uuid 2c1a6dd6-c61c-478b-b6ec-38ae19a4a98c))
     (pin "2" (uuid bad9813d-fda2-4395-841b-02f9fef7a09f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R8") (unit 1)
         )
@@ -7273,7 +7273,7 @@
     (pin "1" (uuid 1e8ac93e-231a-4ae7-a739-7967589c6226))
     (pin "2" (uuid 022dc469-5d12-4c08-b5c4-b1a17eb67b42))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R29") (unit 1)
         )
@@ -7308,7 +7308,7 @@
     (pin "1" (uuid 89f552fe-6012-4920-af77-6133f8594af9))
     (pin "2" (uuid e43fbe88-18ea-4b79-816d-a45514af7d60))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R7") (unit 1)
         )
@@ -7333,7 +7333,7 @@
     )
     (pin "1" (uuid 52ffb070-8727-4f48-a0c4-ff3166cd6e40))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0113") (unit 1)
         )
@@ -7368,7 +7368,7 @@
     (pin "1" (uuid 8976a72f-851c-4d04-afae-bfa8771e682c))
     (pin "2" (uuid d33dd8f5-e63c-46ba-aacf-0d4fcfccfa87))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R30") (unit 1)
         )
@@ -7393,7 +7393,7 @@
     )
     (pin "1" (uuid 438dfd0d-7e28-4042-8262-5c4febe50238))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR052") (unit 1)
         )
@@ -7418,7 +7418,7 @@
     )
     (pin "1" (uuid efcc1765-f257-4c76-82e9-dbe3baf0bd7b))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0120") (unit 1)
         )
@@ -7443,7 +7443,7 @@
     )
     (pin "1" (uuid a017f98f-b3c6-4baf-93cd-5fdb8cf121fd))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR034") (unit 1)
         )
@@ -7460,7 +7460,7 @@
     (property "Value" "PC4" (at 576.58 524.51 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:TestPoint_Pad_1.5x2.0mm" (at 585.47 520.7 0)
+    (property "Footprint" "pluma Lybrary:TestPoint_Pad_1.5x2.0mm" (at 585.47 520.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 585.47 520.7 0)
@@ -7477,7 +7477,7 @@
     )
     (pin "1" (uuid 550e4c83-a61a-44d9-85f9-0f52438064aa))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "TP9") (unit 1)
         )
@@ -7512,7 +7512,7 @@
     (pin "1" (uuid e6b1733a-5861-42e3-b869-49ae2708a880))
     (pin "2" (uuid ff52c6ae-effe-47cb-af5c-9eecab4d239b))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "L1") (unit 1)
         )
@@ -7529,7 +7529,7 @@
     (property "Value" "PA2" (at 576.58 528.32 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:TestPoint_Pad_1.5x2.0mm" (at 585.47 524.51 0)
+    (property "Footprint" "pluma Lybrary:TestPoint_Pad_1.5x2.0mm" (at 585.47 524.51 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 585.47 524.51 0)
@@ -7546,7 +7546,7 @@
     )
     (pin "1" (uuid c99f20a9-4471-400f-a1fc-6dece89a6a85))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "TP13") (unit 1)
         )
@@ -7563,7 +7563,7 @@
     (property "Value" "PB3" (at 576.58 532.13 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:TestPoint_Pad_1.5x2.0mm" (at 585.47 528.32 0)
+    (property "Footprint" "pluma Lybrary:TestPoint_Pad_1.5x2.0mm" (at 585.47 528.32 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 585.47 528.32 0)
@@ -7580,7 +7580,7 @@
     )
     (pin "1" (uuid 33cb622d-a260-4a26-8396-c3c60ede140e))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "TP15") (unit 1)
         )
@@ -7597,7 +7597,7 @@
     (property "Value" "GND" (at 576.58 535.94 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:TestPoint_Pad_2.0x3.0mm" (at 585.47 532.13 0)
+    (property "Footprint" "pluma Lybrary:TestPoint_Pad_2.0x3.0mm" (at 585.47 532.13 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 585.47 532.13 0)
@@ -7614,7 +7614,7 @@
     )
     (pin "1" (uuid fdbaa698-5f86-4c17-81bd-77302c002a45))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "TP16") (unit 1)
         )
@@ -7631,7 +7631,7 @@
     (property "Value" "GND" (at 576.58 539.115 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:TestPoint_Pad_2.0x3.0mm" (at 585.47 535.305 0)
+    (property "Footprint" "pluma Lybrary:TestPoint_Pad_2.0x3.0mm" (at 585.47 535.305 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 585.47 535.305 0)
@@ -7648,7 +7648,7 @@
     )
     (pin "1" (uuid 287bb517-0f8b-472c-971e-996990d57430))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "TP17") (unit 1)
         )
@@ -7683,7 +7683,7 @@
     (pin "1" (uuid de18b574-f43f-4976-9218-ed0da593508b))
     (pin "2" (uuid 7db0886d-fffd-47cf-aa93-f4c845811dc5))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C18") (unit 1)
         )
@@ -7708,7 +7708,7 @@
     )
     (pin "1" (uuid 3c9067cd-9778-4ac5-a1f3-8e894fbebc1f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0121") (unit 1)
         )
@@ -7743,7 +7743,7 @@
     (pin "1" (uuid eaa01c0f-2ea0-40b2-9235-22ba15d4f2ff))
     (pin "2" (uuid 05552f52-1b30-4c46-8a04-8f4b80e53596))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C19") (unit 1)
         )
@@ -7768,7 +7768,7 @@
     )
     (pin "1" (uuid 3c951754-2421-4413-b5f8-fea911dfad60))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0122") (unit 1)
         )
@@ -7803,7 +7803,7 @@
     (pin "1" (uuid 2d841731-567f-4a1f-bd5e-06a42b3e3d9e))
     (pin "2" (uuid fe1273f3-e0b6-4097-b776-e35ca4af9ed5))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C20") (unit 1)
         )
@@ -7828,7 +7828,7 @@
     )
     (pin "1" (uuid ecd22ded-17a0-4bdd-89b6-bd422a9eb8d6))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0125") (unit 1)
         )
@@ -7863,7 +7863,7 @@
     (pin "1" (uuid 5d9310c6-38e7-4edf-8604-ab9ed8cdfc8a))
     (pin "2" (uuid 7a5547da-08ce-4902-a13a-94f9e2b23b8e))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C16") (unit 1)
         )
@@ -7888,7 +7888,7 @@
     )
     (pin "1" (uuid b3c478e9-97d1-4275-9c3a-2ec249f59c49))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0127") (unit 1)
         )
@@ -7913,7 +7913,7 @@
     )
     (pin "1" (uuid a83fde9b-2bcd-4886-8625-a1e7eed7c355))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR046") (unit 1)
         )
@@ -7938,7 +7938,7 @@
     )
     (pin "1" (uuid 12afc7fd-9079-418c-9125-6eb231c60e36))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR047") (unit 1)
         )
@@ -7963,7 +7963,7 @@
     )
     (pin "1" (uuid ab9e325f-fbc2-4165-af14-b971bc298acc))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0114") (unit 1)
         )
@@ -7998,7 +7998,7 @@
     (pin "1" (uuid 4cbb303f-70e0-437f-9894-29112a0806e0))
     (pin "2" (uuid 9497e2bc-34ee-459c-9b61-a4d4fe178a88))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C24") (unit 1)
         )
@@ -8023,7 +8023,7 @@
     )
     (pin "1" (uuid 59602dc4-998a-4cdf-b44f-99cdd62a225e))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR017") (unit 1)
         )
@@ -8048,7 +8048,7 @@
     )
     (pin "1" (uuid 946908d2-812d-4b70-90e7-2a1d64068057))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR018") (unit 1)
         )
@@ -8073,7 +8073,7 @@
     )
     (pin "1" (uuid 4f02937e-ad03-4448-a8eb-02ba1d6c9bfd))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR015") (unit 1)
         )
@@ -8098,7 +8098,7 @@
     )
     (pin "1" (uuid e208db37-17e9-4544-84ba-648d9204c062))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0115") (unit 1)
         )
@@ -8123,7 +8123,7 @@
     )
     (pin "1" (uuid b2603af5-2f8d-44be-a837-bbc7c8fd63d1))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR014") (unit 1)
         )
@@ -8140,7 +8140,7 @@
     (property "Value" "EDA/GSR_Module_MIKROE_2860" (at 359.41 358.14 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:EDA_MIKROE-2860-BLOCK" (at 373.38 377.19 0)
+    (property "Footprint" "pluma Lybrary:EDA_MIKROE-2860-BLOCK" (at 373.38 377.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 345.44 320.04 0)
@@ -8172,7 +8172,7 @@
     (pin "8" (uuid 53f02720-71de-4cc4-8490-dcafeb5ff693))
     (pin "9" (uuid e64db929-f591-4f02-933d-0a6ccb271ca2))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "U2") (unit 1)
         )
@@ -8189,7 +8189,7 @@
     (property "Value" "GNSS_UBLOX_ZED_F9R" (at 466.09 359.41 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:ZED-F9R_footprint" (at 495.3 410.21 0)
+    (property "Footprint" "pluma Lybrary:ZED-F9R_footprint" (at 495.3 410.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 476.25 386.08 0)
@@ -8231,7 +8231,7 @@
     (pin "8" (uuid 36ec202d-69cb-4d05-b8ba-fae2933c8f61))
     (pin "9" (uuid 755a6a29-01e0-46ca-b838-903364b90a48))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "U4") (unit 1)
         )
@@ -8248,7 +8248,7 @@
     (property "Value" "HR_Module_AD8232" (at 264.795 357.505 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:HEART_RATE_AD8632_PAD" (at 290.195 379.095 0)
+    (property "Footprint" "pluma Lybrary:HEART_RATE_AD8632_PAD" (at 290.195 379.095 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 273.685 363.855 0)
@@ -8273,7 +8273,7 @@
     (pin "8" (uuid 0eb8b56c-fbd9-41d5-87f1-f05cfc4ea4a4))
     (pin "9" (uuid 4923feb2-7752-406c-b9c9-b39911fe7e3b))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "U1") (unit 1)
         )
@@ -8290,7 +8290,7 @@
     (property "Value" "Motion_Sensor_Module_BNO055 #1" (at 215.265 360.045 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:BNO55_MODULE" (at 230.505 413.385 0)
+    (property "Footprint" "pluma Lybrary:BNO55_MODULE" (at 230.505 413.385 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 202.565 323.215 0)
@@ -8316,7 +8316,7 @@
     (pin "8" (uuid 55b53377-2d47-44f0-8f3e-10f919fd9346))
     (pin "9" (uuid 3fce2ed6-2727-4c16-9de2-28018c4441a3))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "U3") (unit 1)
         )
@@ -8351,7 +8351,7 @@
     (pin "1" (uuid 3d8475da-349f-4f51-ad3f-70e337d6ae2d))
     (pin "2" (uuid 273b6eb7-7c50-4794-9b5c-95e1b8d489da))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R1") (unit 1)
         )
@@ -8376,7 +8376,7 @@
     )
     (pin "1" (uuid ae292ad5-ed51-44d5-8496-e6d38433fe14))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR013") (unit 1)
         )
@@ -8401,7 +8401,7 @@
     )
     (pin "1" (uuid 357ecc24-1733-485e-a189-27c5bdca557c))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0148") (unit 1)
         )
@@ -8436,7 +8436,7 @@
     (pin "1" (uuid dd01d1f2-5911-4bd5-8ae5-3de09ab8adae))
     (pin "2" (uuid 4f496a10-5eaa-4181-9a7c-b81528e2641c))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C23") (unit 1)
         )
@@ -8461,7 +8461,7 @@
     )
     (pin "1" (uuid 2c88e678-8bba-46cc-ac8f-fb18f262b9f3))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR010") (unit 1)
         )
@@ -8496,7 +8496,7 @@
     (pin "1" (uuid 2561317c-fa37-48db-a6dc-fe9b7efa9856))
     (pin "2" (uuid 8794bff1-c2b8-4488-9175-59d8cb90c1d3))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "D1") (unit 1)
         )
@@ -8531,7 +8531,7 @@
     (pin "1" (uuid ed1f78a2-fdc0-484b-83e7-e8434d237d0d))
     (pin "2" (uuid 823d957d-3b46-4ee0-9275-3f75274570ea))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R3") (unit 1)
         )
@@ -8566,7 +8566,7 @@
     (pin "1" (uuid d1ed754a-ec26-4ab3-b08a-344084b710d8))
     (pin "2" (uuid 60a166ef-3229-405f-bbb9-4c55b80840cd))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R2") (unit 1)
         )
@@ -8591,7 +8591,7 @@
     )
     (pin "1" (uuid 134ed570-2267-46b4-97fd-ea3ec33adaa4))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR044") (unit 1)
         )
@@ -8626,7 +8626,7 @@
     (pin "1" (uuid a45ae153-93bf-49cc-ad11-218efbd25d4d))
     (pin "2" (uuid c6f55a92-bfc6-48ab-a14e-48c6661236c8))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C13") (unit 1)
         )
@@ -8651,7 +8651,7 @@
     )
     (pin "1" (uuid e374735a-624a-41b1-8166-be5689519e3f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0116") (unit 1)
         )
@@ -8686,7 +8686,7 @@
     (pin "1" (uuid f5ff369a-5446-4b60-bf07-0df77f2c00d1))
     (pin "2" (uuid 7da00387-2a43-40e0-9866-7b6c24a9860d))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C14") (unit 1)
         )
@@ -8711,7 +8711,7 @@
     )
     (pin "1" (uuid 6e03b0d6-989c-423e-846b-ba25a599fe9b))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0117") (unit 1)
         )
@@ -8746,7 +8746,7 @@
     (pin "1" (uuid ddd8b943-81a9-4c57-a8ca-7382bc69d2e9))
     (pin "2" (uuid e33f48e2-3438-4dde-b64b-30cc04526280))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C15") (unit 1)
         )
@@ -8771,7 +8771,7 @@
     )
     (pin "1" (uuid b8b4d3f2-e38e-4398-a35b-c9635aace022))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0118") (unit 1)
         )
@@ -8796,7 +8796,7 @@
     )
     (pin "1" (uuid 8c168107-10ea-472b-ae6b-2bc9be5207bb))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0123") (unit 1)
         )
@@ -8821,7 +8821,7 @@
     )
     (pin "1" (uuid d7240654-20c7-486f-8fce-0049927ef54d))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0124") (unit 1)
         )
@@ -8856,7 +8856,7 @@
     (pin "1" (uuid e8de9983-bbb3-4386-947c-6a583a26ab6e))
     (pin "2" (uuid 2d57d4fb-26ad-42b5-98a0-0487f508b490))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C21") (unit 1)
         )
@@ -8881,7 +8881,7 @@
     )
     (pin "1" (uuid a8f6a460-0d02-4057-b1ce-266bde7b9ed2))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0126") (unit 1)
         )
@@ -8906,7 +8906,7 @@
     )
     (pin "1" (uuid 0ebaffda-ce0a-4cff-bf75-7940f6bbcb5a))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0128") (unit 1)
         )
@@ -8945,7 +8945,7 @@
     (pin "5" (uuid 69ae20e9-d847-4670-accc-7af82c34e9f8))
     (pin "6" (uuid d2f677d8-adf2-483c-8a28-1173c4dd32ce))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "PDI1") (unit 1)
         )
@@ -8970,7 +8970,7 @@
     )
     (pin "1" (uuid bca47a02-b7c0-48c8-bee2-c516b3f9f473))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0129") (unit 1)
         )
@@ -8995,7 +8995,7 @@
     )
     (pin "1" (uuid c3d512ae-9c8e-4244-9762-babde2109ff6))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0130") (unit 1)
         )
@@ -9030,7 +9030,7 @@
     (pin "1" (uuid 98c6275c-0ef7-46de-9c0e-7092e7b66563))
     (pin "2" (uuid 75fc8b1a-a84b-4be8-9b65-239575595535))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R68") (unit 1)
         )
@@ -9065,7 +9065,7 @@
     (pin "1" (uuid e79638f1-4373-4d6b-abcb-8fd3abcfd76c))
     (pin "2" (uuid d0675a4c-b9cd-49a3-8c3c-3ec15a91d2de))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C51") (unit 1)
         )
@@ -9090,7 +9090,7 @@
     )
     (pin "1" (uuid 6204d04d-3227-4cd8-87c9-1a270a6818fc))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0131") (unit 1)
         )
@@ -9115,7 +9115,7 @@
     )
     (pin "1" (uuid a2cfe3f7-0502-4196-a50f-b53ddb5b0fd3))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0132") (unit 1)
         )
@@ -9153,7 +9153,7 @@
     (pin "4" (uuid 9cb18ea2-df3a-4250-aac1-70047d8c3c7b))
     (pin "5" (uuid 1c601625-54e6-4174-b18a-b4017de9c79c))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "IC4") (unit 1)
         )
@@ -9188,7 +9188,7 @@
     (pin "1" (uuid 8cffdf19-691a-4c57-946c-b4dec110255d))
     (pin "2" (uuid c4c8a50b-f4e1-4da1-98b7-1ca55d06ce60))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C11") (unit 1)
         )
@@ -9223,7 +9223,7 @@
     (pin "1" (uuid c890f96b-2096-4176-9724-71dd737073d4))
     (pin "2" (uuid c101e930-938d-4263-8b96-f827337dc92a))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C12") (unit 1)
         )
@@ -9248,7 +9248,7 @@
     )
     (pin "1" (uuid cbf31166-0cbc-4ca3-8671-f00d0b392607))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0134") (unit 1)
         )
@@ -9273,7 +9273,7 @@
     )
     (pin "1" (uuid 1986395d-a3e9-4811-8e5a-0421fad80652))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0135") (unit 1)
         )
@@ -9298,7 +9298,7 @@
     )
     (pin "1" (uuid 42d5839d-0d49-4d25-86f6-8752ddb325f9))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0136") (unit 1)
         )
@@ -9333,7 +9333,7 @@
     (pin "1" (uuid e1f27efa-b618-4aaf-82f6-4bb5837d2ffd))
     (pin "2" (uuid 56f02389-d78a-4d11-b651-1abf4b17d33d))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C10") (unit 1)
         )
@@ -9358,7 +9358,7 @@
     )
     (pin "1" (uuid 7742b8d6-30dc-4135-943d-ac73c30a7532))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0137") (unit 1)
         )
@@ -9383,7 +9383,7 @@
     )
     (pin "1" (uuid 09b709ae-f778-4788-a13b-bffb2b648aac))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0138") (unit 1)
         )
@@ -9408,7 +9408,7 @@
     )
     (pin "1" (uuid c88134ac-029d-4d5f-ab28-2f8b5b67188c))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0139") (unit 1)
         )
@@ -9433,7 +9433,7 @@
     )
     (pin "1" (uuid e3a3cf6c-8c9f-4a60-ab27-1f0536ac847a))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0140") (unit 1)
         )
@@ -9458,7 +9458,7 @@
     )
     (pin "1" (uuid b635704c-69c9-40c0-a425-39c08f9fa32d))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0141") (unit 1)
         )
@@ -9483,7 +9483,7 @@
     )
     (pin "1" (uuid 6efa2876-2732-4a72-afb3-3edbf93b366c))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0142") (unit 1)
         )
@@ -9517,7 +9517,7 @@
     )
     (pin "1" (uuid 5a2410b2-1f8e-49e1-8b6c-1b82b1b82dda))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "GND_tp1") (unit 1)
         )
@@ -9551,7 +9551,7 @@
     )
     (pin "1" (uuid c832b3b3-6d28-4450-b558-74a3c8a8c224))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "GND_tp2") (unit 1)
         )
@@ -9585,7 +9585,7 @@
     )
     (pin "1" (uuid 6bb94b2f-9a5e-4567-b0dd-694a9bbc37e9))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "+5V_tp1") (unit 1)
         )
@@ -9619,7 +9619,7 @@
     )
     (pin "1" (uuid 332ff40f-f0da-4306-9fe3-54ab44ea51a2))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "+3V3_tp1") (unit 1)
         )
@@ -9656,7 +9656,7 @@
     (pin "3" (uuid 7d4d9a93-c5e9-496b-9018-69f6ce9795b4))
     (pin "4" (uuid f7e01a04-fd51-4196-81c5-9b5094923aef))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "X1") (unit 1)
         )
@@ -9681,7 +9681,7 @@
     )
     (pin "1" (uuid ed807075-46e9-4059-b6c4-ba1a9f52fcda))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0143") (unit 1)
         )
@@ -9716,7 +9716,7 @@
     (pin "1" (uuid f86b9084-e2e8-42cf-9576-33a364a511a0))
     (pin "2" (uuid 14fb321d-8808-445f-846e-715d9293be27))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "C1") (unit 1)
         )
@@ -9741,7 +9741,7 @@
     )
     (pin "1" (uuid 975bac85-4985-4cfc-b833-5c971b659b79))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0144") (unit 1)
         )
@@ -9766,7 +9766,7 @@
     )
     (pin "1" (uuid 3ae3e024-24ca-4af2-97d2-acb3deed3fad))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0145") (unit 1)
         )
@@ -9791,7 +9791,7 @@
     )
     (pin "1" (uuid bf8ea67f-9944-47cc-9352-472db5bccbdd))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR019") (unit 1)
         )
@@ -9816,7 +9816,7 @@
     )
     (pin "1" (uuid 7999d19b-afd3-475a-a4b0-e2ea9036c227))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR036") (unit 1)
         )
@@ -9851,7 +9851,7 @@
     (pin "1" (uuid 0158f436-d06f-4763-8d93-79f5d1d68985))
     (pin "2" (uuid d47bf572-fa72-4ba1-941b-82c3dd7a1ae4))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R10") (unit 1)
         )
@@ -9884,7 +9884,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "H4") (unit 1)
         )
@@ -9909,7 +9909,7 @@
     )
     (pin "1" (uuid 2ca50d15-9849-4b86-9b98-98f6e1333de5))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR04") (unit 1)
         )
@@ -9944,7 +9944,7 @@
     (pin "1" (uuid 2ae5a92c-dec8-4886-8606-f6303cf30a8d))
     (pin "2" (uuid 994fe5a6-85eb-4dbc-9d65-4c2e8c5c9a06))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R27") (unit 1)
         )
@@ -9979,7 +9979,7 @@
     (pin "1" (uuid 75e8d9b1-d18f-4b94-9d18-144dc5c813ab))
     (pin "2" (uuid 277c7b31-cdeb-40c6-accb-fb62dc384342))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R6") (unit 1)
         )
@@ -9996,7 +9996,7 @@
     (property "Value" "Adafruit Feather M0" (at 139.065 385.445 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "EmodionalCities_footprints_lib:Adafruit Feather M0" (at 141.605 377.825 90)
+    (property "Footprint" "pluma Lybrary:Adafruit Feather M0" (at 141.605 377.825 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 139.065 384.175 0)
@@ -10031,7 +10031,7 @@
     (pin "8" (uuid f67cddb1-8203-4f02-8b72-3dcf5cf34e00))
     (pin "9" (uuid 47ef9c97-7eee-4113-b372-7b6e5a1da62f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "U5") (unit 1)
         )
@@ -10066,7 +10066,7 @@
     (pin "1" (uuid 65fbe043-6a9d-422c-9399-4dfdd99713ab))
     (pin "2" (uuid 1725b41f-3da8-453c-82c0-24f4f7fc4464))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R22") (unit 1)
         )
@@ -10091,7 +10091,7 @@
     )
     (pin "1" (uuid 5b1b2c38-a14a-4b9f-9efd-98dc865b713f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR012") (unit 1)
         )
@@ -10116,7 +10116,7 @@
     )
     (pin "1" (uuid ecc96c1f-a05f-4ba6-bf4f-b2e8efe20402))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR035") (unit 1)
         )
@@ -10149,7 +10149,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "H5") (unit 1)
         )
@@ -10176,7 +10176,7 @@
     (pin "2" (uuid 086dbe70-ee24-42b9-8cbf-6bb038b22ed2))
     (pin "3" (uuid 132f5bbf-f822-47d7-91c1-86bd641af31c))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "J4") (unit 1)
         )
@@ -10211,7 +10211,7 @@
     (pin "1" (uuid e4c403be-c120-4acc-b9d5-e8b76d0ed10f))
     (pin "2" (uuid d5512fb2-df52-422f-abf8-c14871705cc8))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R25") (unit 1)
         )
@@ -10239,7 +10239,7 @@
     (pin "3" (uuid 219537f5-5477-4b6b-84c2-475c88fcd6b7))
     (pin "4" (uuid ecdc7d4a-bf68-4783-a368-5d80d8e9862f))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "J3") (unit 1)
         )
@@ -10264,7 +10264,7 @@
     )
     (pin "1" (uuid b9b7128d-064a-4e1a-b50f-d0e3498d8d8b))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR05") (unit 1)
         )
@@ -10289,7 +10289,7 @@
     )
     (pin "1" (uuid a7a7a9b1-af35-452b-8636-22cd696a3e39))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR0133") (unit 1)
         )
@@ -10314,7 +10314,7 @@
     )
     (pin "1" (uuid 7bfe1884-7084-4262-9ff1-ce8a61f58b86))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR016") (unit 1)
         )
@@ -10349,7 +10349,7 @@
     (pin "1" (uuid a06f3c55-d034-4bc4-ae28-5bed3248e721))
     (pin "2" (uuid 709d198b-41d3-499e-aad7-078874a4e222))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "R9") (unit 1)
         )
@@ -10374,7 +10374,7 @@
     )
     (pin "1" (uuid 8d17f982-b5ef-4fa1-b378-7f48f08e827d))
     (instances
-      (project "EmotionalCities_v.1.1"
+      (project "pluma"
         (path "/8b5b38de-07aa-481d-968f-9f02c978442f"
           (reference "#PWR037") (unit 1)
         )
