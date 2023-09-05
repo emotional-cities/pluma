@@ -7754,7 +7754,7 @@
   (gr_text "3V3" (at 191.349441 79.2 45) (layer "B.SilkS") (tstamp ec2dba57-7c06-492f-82db-24f4ca030273)
     (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror))
   )
-  (gr_text "Emotional Cities v.1.1" (at 191.9 130.7) (layer "F.SilkS") (tstamp 00000000-0000-0000-0000-000062bd7231)
+  (gr_text "Pluma v.1.1" (at 185.3188 130.8688) (layer "F.SilkS") (tstamp 00000000-0000-0000-0000-000062bd7231)
     (effects (font (size 1.5 1.5) (thickness 0.2)) (justify right top))
   )
   (gr_text "5V" (at 152.5 125.7) (layer "F.SilkS") (tstamp 1c5a1583-5171-4049-ae79-37a61a0f90d4)
