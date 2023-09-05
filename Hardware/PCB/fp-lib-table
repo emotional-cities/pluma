@@ -1,3 +1,4 @@
 (fp_lib_table
-  (lib (name "EmodionalCities_footprints_lib")(type "KiCad")(uri "${KIPRJMOD}/EmodionalCities_footprints_lib")(options "")(descr ""))
+  (version 7)
+  (lib (name "pluma Lybrary")(type "KiCad")(uri "${KIPRJMOD}/pluma Lybrary.pretty")(options "")(descr ""))
 )
