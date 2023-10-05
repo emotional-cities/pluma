@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Xml.Serialization;
 
-namespace Harp.Pluma
+namespace EmotionalCities.Pluma
 {
     /// <summary>
     /// Generates events and processes commands for the Pluma device connected
@@ -93,12 +93,12 @@ namespace Harp.Pluma
     [XmlInclude(typeof(OutputSet))]
     [XmlInclude(typeof(OutputClear))]
     [Description("Filters register-specific messages reported by the Pluma device.")]
-    public class FilterMessage : FilterMessageBuilder, INamedElement
+    public class FilterRegister : FilterRegisterBuilder, INamedElement
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="FilterMessage"/> class.
+        /// Initializes a new instance of the <see cref="FilterRegister"/> class.
         /// </summary>
-        public FilterMessage()
+        public FilterRegister()
         {
             Register = new StreamsEnable();
         }
@@ -1121,6 +1121,15 @@ namespace Harp.Pluma
     [XmlInclude(typeof(CreatePortDigitalInputPayload))]
     [XmlInclude(typeof(CreateOutputSetPayload))]
     [XmlInclude(typeof(CreateOutputClearPayload))]
+    [XmlInclude(typeof(CreateTimestampedStreamsEnablePayload))]
+    [XmlInclude(typeof(CreateTimestampedStreamsDisablePayload))]
+    [XmlInclude(typeof(CreateTimestampedOximeterDataPayload))]
+    [XmlInclude(typeof(CreateTimestampedEcgAndAnalogDataPayload))]
+    [XmlInclude(typeof(CreateTimestampedGsrDataPayload))]
+    [XmlInclude(typeof(CreateTimestampedAccelerometerDataPayload))]
+    [XmlInclude(typeof(CreateTimestampedPortDigitalInputPayload))]
+    [XmlInclude(typeof(CreateTimestampedOutputSetPayload))]
+    [XmlInclude(typeof(CreateTimestampedOutputClearPayload))]
     [Description("Creates standard message payloads for the Pluma device.")]
     public partial class CreateMessage : CreateMessageBuilder, INamedElement
     {
@@ -1136,109 +1145,120 @@ namespace Harp.Pluma
     }
 
     /// <summary>
-    /// Represents an operator that creates a sequence of message payloads
+    /// Represents an operator that creates a message payload
     /// that enables the generation of events for the respective streams.
     /// </summary>
     [DisplayName("StreamsEnablePayload")]
-    [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that enables the generation of events for the respective streams.")]
-    public partial class CreateStreamsEnablePayload : HarpCombinator
+    [Description("Creates a message payload that enables the generation of events for the respective streams.")]
+    public partial class CreateStreamsEnablePayload
     {
         /// <summary>
         /// Gets or sets the value that enables the generation of events for the respective streams.
         /// </summary>
         [Description("The value that enables the generation of events for the respective streams.")]
-        public Streams Value { get; set; }
+        public Streams StreamsEnable { get; set; }
 
         /// <summary>
-        /// Creates an observable sequence that contains a single message
-        /// that enables the generation of events for the respective streams.
+        /// Creates a message payload for the StreamsEnable register.
         /// </summary>
-        /// <returns>
-        /// A sequence containing a single <see cref="HarpMessage"/> object
-        /// representing the created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process()
+        /// <returns>The created message payload value.</returns>
+        public Streams GetPayload()
         {
-            return Process(Observable.Return(System.Reactive.Unit.Default));
+            return StreamsEnable;
         }
 
         /// <summary>
-        /// Creates an observable sequence of message payloads
-        /// that enables the generation of events for the respective streams.
+        /// Creates a message that enables the generation of events for the respective streams.
         /// </summary>
-        /// <typeparam name="TSource">
-        /// The type of the elements in the <paramref name="source"/> sequence.
-        /// </typeparam>
-        /// <param name="source">
-        /// The sequence containing the notifications used for emitting message payloads.
-        /// </param>
-        /// <returns>
-        /// A sequence of <see cref="HarpMessage"/> objects representing each
-        /// created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the StreamsEnable register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
         {
-            return source.Select(_ => StreamsEnable.FromPayload(MessageType, Value));
+            return EmotionalCities.Pluma.StreamsEnable.FromPayload(messageType, GetPayload());
         }
     }
 
     /// <summary>
-    /// Represents an operator that creates a sequence of message payloads
+    /// Represents an operator that creates a timestamped message payload
+    /// that enables the generation of events for the respective streams.
+    /// </summary>
+    [DisplayName("TimestampedStreamsEnablePayload")]
+    [Description("Creates a timestamped message payload that enables the generation of events for the respective streams.")]
+    public partial class CreateTimestampedStreamsEnablePayload : CreateStreamsEnablePayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that enables the generation of events for the respective streams.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the StreamsEnable register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return EmotionalCities.Pluma.StreamsEnable.FromPayload(timestamp, messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a message payload
     /// that disables the generation of events for the respective streams.
     /// </summary>
     [DisplayName("StreamsDisablePayload")]
-    [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that disables the generation of events for the respective streams.")]
-    public partial class CreateStreamsDisablePayload : HarpCombinator
+    [Description("Creates a message payload that disables the generation of events for the respective streams.")]
+    public partial class CreateStreamsDisablePayload
     {
         /// <summary>
         /// Gets or sets the value that disables the generation of events for the respective streams.
         /// </summary>
         [Description("The value that disables the generation of events for the respective streams.")]
-        public Streams Value { get; set; }
+        public Streams StreamsDisable { get; set; }
 
         /// <summary>
-        /// Creates an observable sequence that contains a single message
-        /// that disables the generation of events for the respective streams.
+        /// Creates a message payload for the StreamsDisable register.
         /// </summary>
-        /// <returns>
-        /// A sequence containing a single <see cref="HarpMessage"/> object
-        /// representing the created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process()
+        /// <returns>The created message payload value.</returns>
+        public Streams GetPayload()
         {
-            return Process(Observable.Return(System.Reactive.Unit.Default));
+            return StreamsDisable;
         }
 
         /// <summary>
-        /// Creates an observable sequence of message payloads
-        /// that disables the generation of events for the respective streams.
+        /// Creates a message that disables the generation of events for the respective streams.
         /// </summary>
-        /// <typeparam name="TSource">
-        /// The type of the elements in the <paramref name="source"/> sequence.
-        /// </typeparam>
-        /// <param name="source">
-        /// The sequence containing the notifications used for emitting message payloads.
-        /// </param>
-        /// <returns>
-        /// A sequence of <see cref="HarpMessage"/> objects representing each
-        /// created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the StreamsDisable register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
         {
-            return source.Select(_ => StreamsDisable.FromPayload(MessageType, Value));
+            return EmotionalCities.Pluma.StreamsDisable.FromPayload(messageType, GetPayload());
         }
     }
 
     /// <summary>
-    /// Represents an operator that creates a sequence of message payloads
+    /// Represents an operator that creates a timestamped message payload
+    /// that disables the generation of events for the respective streams.
+    /// </summary>
+    [DisplayName("TimestampedStreamsDisablePayload")]
+    [Description("Creates a timestamped message payload that disables the generation of events for the respective streams.")]
+    public partial class CreateTimestampedStreamsDisablePayload : CreateStreamsDisablePayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that disables the generation of events for the respective streams.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the StreamsDisable register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return EmotionalCities.Pluma.StreamsDisable.FromPayload(timestamp, messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a message payload
     /// that stream containing data from Oximeter sensor reads.
     /// </summary>
     [DisplayName("OximeterDataPayload")]
-    [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that stream containing data from Oximeter sensor reads.")]
-    public partial class CreateOximeterDataPayload : HarpCombinator
+    [Description("Creates a message payload that stream containing data from Oximeter sensor reads.")]
+    public partial class CreateOximeterDataPayload
     {
         /// <summary>
         /// Gets or sets a value to write on payload member Channel0.
@@ -1265,54 +1285,57 @@ namespace Harp.Pluma
         public byte Channel3 { get; set; }
 
         /// <summary>
-        /// Creates an observable sequence that contains a single message
-        /// that stream containing data from Oximeter sensor reads.
+        /// Creates a message payload for the OximeterData register.
         /// </summary>
-        /// <returns>
-        /// A sequence containing a single <see cref="HarpMessage"/> object
-        /// representing the created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process()
+        /// <returns>The created message payload value.</returns>
+        public OximeterDataPayload GetPayload()
         {
-            return Process(Observable.Return(System.Reactive.Unit.Default));
+            OximeterDataPayload value;
+            value.Channel0 = Channel0;
+            value.Channel1 = Channel1;
+            value.Channel2 = Channel2;
+            value.Channel3 = Channel3;
+            return value;
         }
 
         /// <summary>
-        /// Creates an observable sequence of message payloads
-        /// that stream containing data from Oximeter sensor reads.
+        /// Creates a message that stream containing data from Oximeter sensor reads.
         /// </summary>
-        /// <typeparam name="TSource">
-        /// The type of the elements in the <paramref name="source"/> sequence.
-        /// </typeparam>
-        /// <param name="source">
-        /// The sequence containing the notifications used for emitting message payloads.
-        /// </param>
-        /// <returns>
-        /// A sequence of <see cref="HarpMessage"/> objects representing each
-        /// created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the OximeterData register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
         {
-            return source.Select(_ =>
-            {
-                OximeterDataPayload value;
-                value.Channel0 = Channel0;
-                value.Channel1 = Channel1;
-                value.Channel2 = Channel2;
-                value.Channel3 = Channel3;
-                return OximeterData.FromPayload(MessageType, value);
-            });
+            return EmotionalCities.Pluma.OximeterData.FromPayload(messageType, GetPayload());
         }
     }
 
     /// <summary>
-    /// Represents an operator that creates a sequence of message payloads
+    /// Represents an operator that creates a timestamped message payload
+    /// that stream containing data from Oximeter sensor reads.
+    /// </summary>
+    [DisplayName("TimestampedOximeterDataPayload")]
+    [Description("Creates a timestamped message payload that stream containing data from Oximeter sensor reads.")]
+    public partial class CreateTimestampedOximeterDataPayload : CreateOximeterDataPayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that stream containing data from Oximeter sensor reads.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the OximeterData register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return EmotionalCities.Pluma.OximeterData.FromPayload(timestamp, messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a message payload
     /// that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
     /// </summary>
     [DisplayName("EcgAndAnalogDataPayload")]
-    [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.")]
-    public partial class CreateEcgAndAnalogDataPayload : HarpCombinator
+    [Description("Creates a message payload that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.")]
+    public partial class CreateEcgAndAnalogDataPayload
     {
         /// <summary>
         /// Gets or sets a value to write on payload member Ecg.
@@ -1327,281 +1350,315 @@ namespace Harp.Pluma
         public ushort Adc { get; set; }
 
         /// <summary>
-        /// Creates an observable sequence that contains a single message
-        /// that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
+        /// Creates a message payload for the EcgAndAnalogData register.
         /// </summary>
-        /// <returns>
-        /// A sequence containing a single <see cref="HarpMessage"/> object
-        /// representing the created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process()
+        /// <returns>The created message payload value.</returns>
+        public EcgAndAnalogDataPayload GetPayload()
         {
-            return Process(Observable.Return(System.Reactive.Unit.Default));
+            EcgAndAnalogDataPayload value;
+            value.Ecg = Ecg;
+            value.Adc = Adc;
+            return value;
         }
 
         /// <summary>
-        /// Creates an observable sequence of message payloads
-        /// that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
+        /// Creates a message that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
         /// </summary>
-        /// <typeparam name="TSource">
-        /// The type of the elements in the <paramref name="source"/> sequence.
-        /// </typeparam>
-        /// <param name="source">
-        /// The sequence containing the notifications used for emitting message payloads.
-        /// </param>
-        /// <returns>
-        /// A sequence of <see cref="HarpMessage"/> objects representing each
-        /// created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the EcgAndAnalogData register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
         {
-            return source.Select(_ =>
-            {
-                EcgAndAnalogDataPayload value;
-                value.Ecg = Ecg;
-                value.Adc = Adc;
-                return EcgAndAnalogData.FromPayload(MessageType, value);
-            });
+            return EmotionalCities.Pluma.EcgAndAnalogData.FromPayload(messageType, GetPayload());
         }
     }
 
     /// <summary>
-    /// Represents an operator that creates a sequence of message payloads
+    /// Represents an operator that creates a timestamped message payload
+    /// that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
+    /// </summary>
+    [DisplayName("TimestampedEcgAndAnalogDataPayload")]
+    [Description("Creates a timestamped message payload that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.")]
+    public partial class CreateTimestampedEcgAndAnalogDataPayload : CreateEcgAndAnalogDataPayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that stream containing synchronized data from Ecg and general-purpose ADC sensor reads.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the EcgAndAnalogData register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return EmotionalCities.Pluma.EcgAndAnalogData.FromPayload(timestamp, messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a message payload
     /// that stream containing data from Gsr sensor reads.
     /// </summary>
     [DisplayName("GsrDataPayload")]
-    [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that stream containing data from Gsr sensor reads.")]
-    public partial class CreateGsrDataPayload : HarpCombinator
+    [Description("Creates a message payload that stream containing data from Gsr sensor reads.")]
+    public partial class CreateGsrDataPayload
     {
         /// <summary>
         /// Gets or sets the value that stream containing data from Gsr sensor reads.
         /// </summary>
         [Description("The value that stream containing data from Gsr sensor reads.")]
-        public ushort Value { get; set; }
+        public ushort GsrData { get; set; }
 
         /// <summary>
-        /// Creates an observable sequence that contains a single message
-        /// that stream containing data from Gsr sensor reads.
+        /// Creates a message payload for the GsrData register.
         /// </summary>
-        /// <returns>
-        /// A sequence containing a single <see cref="HarpMessage"/> object
-        /// representing the created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process()
+        /// <returns>The created message payload value.</returns>
+        public ushort GetPayload()
         {
-            return Process(Observable.Return(System.Reactive.Unit.Default));
+            return GsrData;
         }
 
         /// <summary>
-        /// Creates an observable sequence of message payloads
-        /// that stream containing data from Gsr sensor reads.
+        /// Creates a message that stream containing data from Gsr sensor reads.
         /// </summary>
-        /// <typeparam name="TSource">
-        /// The type of the elements in the <paramref name="source"/> sequence.
-        /// </typeparam>
-        /// <param name="source">
-        /// The sequence containing the notifications used for emitting message payloads.
-        /// </param>
-        /// <returns>
-        /// A sequence of <see cref="HarpMessage"/> objects representing each
-        /// created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the GsrData register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
         {
-            return source.Select(_ => GsrData.FromPayload(MessageType, Value));
+            return EmotionalCities.Pluma.GsrData.FromPayload(messageType, GetPayload());
         }
     }
 
     /// <summary>
-    /// Represents an operator that creates a sequence of message payloads
+    /// Represents an operator that creates a timestamped message payload
+    /// that stream containing data from Gsr sensor reads.
+    /// </summary>
+    [DisplayName("TimestampedGsrDataPayload")]
+    [Description("Creates a timestamped message payload that stream containing data from Gsr sensor reads.")]
+    public partial class CreateTimestampedGsrDataPayload : CreateGsrDataPayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that stream containing data from Gsr sensor reads.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the GsrData register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return EmotionalCities.Pluma.GsrData.FromPayload(timestamp, messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a message payload
     /// that stream that generates an event on each triggered acquisition by the external accelerometer board.
     /// </summary>
     [DisplayName("AccelerometerDataPayload")]
-    [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that stream that generates an event on each triggered acquisition by the external accelerometer board.")]
-    public partial class CreateAccelerometerDataPayload : HarpCombinator
+    [Description("Creates a message payload that stream that generates an event on each triggered acquisition by the external accelerometer board.")]
+    public partial class CreateAccelerometerDataPayload
     {
         /// <summary>
         /// Gets or sets the value that stream that generates an event on each triggered acquisition by the external accelerometer board.
         /// </summary>
         [Description("The value that stream that generates an event on each triggered acquisition by the external accelerometer board.")]
-        public byte Value { get; set; }
+        public byte AccelerometerData { get; set; }
 
         /// <summary>
-        /// Creates an observable sequence that contains a single message
-        /// that stream that generates an event on each triggered acquisition by the external accelerometer board.
+        /// Creates a message payload for the AccelerometerData register.
         /// </summary>
-        /// <returns>
-        /// A sequence containing a single <see cref="HarpMessage"/> object
-        /// representing the created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process()
+        /// <returns>The created message payload value.</returns>
+        public byte GetPayload()
         {
-            return Process(Observable.Return(System.Reactive.Unit.Default));
+            return AccelerometerData;
         }
 
         /// <summary>
-        /// Creates an observable sequence of message payloads
-        /// that stream that generates an event on each triggered acquisition by the external accelerometer board.
+        /// Creates a message that stream that generates an event on each triggered acquisition by the external accelerometer board.
         /// </summary>
-        /// <typeparam name="TSource">
-        /// The type of the elements in the <paramref name="source"/> sequence.
-        /// </typeparam>
-        /// <param name="source">
-        /// The sequence containing the notifications used for emitting message payloads.
-        /// </param>
-        /// <returns>
-        /// A sequence of <see cref="HarpMessage"/> objects representing each
-        /// created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the AccelerometerData register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
         {
-            return source.Select(_ => AccelerometerData.FromPayload(MessageType, Value));
+            return EmotionalCities.Pluma.AccelerometerData.FromPayload(messageType, GetPayload());
         }
     }
 
     /// <summary>
-    /// Represents an operator that creates a sequence of message payloads
+    /// Represents an operator that creates a timestamped message payload
+    /// that stream that generates an event on each triggered acquisition by the external accelerometer board.
+    /// </summary>
+    [DisplayName("TimestampedAccelerometerDataPayload")]
+    [Description("Creates a timestamped message payload that stream that generates an event on each triggered acquisition by the external accelerometer board.")]
+    public partial class CreateTimestampedAccelerometerDataPayload : CreateAccelerometerDataPayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that stream that generates an event on each triggered acquisition by the external accelerometer board.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the AccelerometerData register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return EmotionalCities.Pluma.AccelerometerData.FromPayload(timestamp, messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a message payload
     /// that reflects the state of DI digital lines of each Port.
     /// </summary>
     [DisplayName("PortDigitalInputPayload")]
-    [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that reflects the state of DI digital lines of each Port.")]
-    public partial class CreatePortDigitalInputPayload : HarpCombinator
+    [Description("Creates a message payload that reflects the state of DI digital lines of each Port.")]
+    public partial class CreatePortDigitalInputPayload
     {
         /// <summary>
         /// Gets or sets the value that reflects the state of DI digital lines of each Port.
         /// </summary>
         [Description("The value that reflects the state of DI digital lines of each Port.")]
-        public DigitalInputs Value { get; set; }
+        public DigitalInputs PortDigitalInput { get; set; }
 
         /// <summary>
-        /// Creates an observable sequence that contains a single message
-        /// that reflects the state of DI digital lines of each Port.
+        /// Creates a message payload for the PortDigitalInput register.
         /// </summary>
-        /// <returns>
-        /// A sequence containing a single <see cref="HarpMessage"/> object
-        /// representing the created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process()
+        /// <returns>The created message payload value.</returns>
+        public DigitalInputs GetPayload()
         {
-            return Process(Observable.Return(System.Reactive.Unit.Default));
+            return PortDigitalInput;
         }
 
         /// <summary>
-        /// Creates an observable sequence of message payloads
-        /// that reflects the state of DI digital lines of each Port.
+        /// Creates a message that reflects the state of DI digital lines of each Port.
         /// </summary>
-        /// <typeparam name="TSource">
-        /// The type of the elements in the <paramref name="source"/> sequence.
-        /// </typeparam>
-        /// <param name="source">
-        /// The sequence containing the notifications used for emitting message payloads.
-        /// </param>
-        /// <returns>
-        /// A sequence of <see cref="HarpMessage"/> objects representing each
-        /// created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the PortDigitalInput register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
         {
-            return source.Select(_ => PortDigitalInput.FromPayload(MessageType, Value));
+            return EmotionalCities.Pluma.PortDigitalInput.FromPayload(messageType, GetPayload());
         }
     }
 
     /// <summary>
-    /// Represents an operator that creates a sequence of message payloads
+    /// Represents an operator that creates a timestamped message payload
+    /// that reflects the state of DI digital lines of each Port.
+    /// </summary>
+    [DisplayName("TimestampedPortDigitalInputPayload")]
+    [Description("Creates a timestamped message payload that reflects the state of DI digital lines of each Port.")]
+    public partial class CreateTimestampedPortDigitalInputPayload : CreatePortDigitalInputPayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that reflects the state of DI digital lines of each Port.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the PortDigitalInput register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return EmotionalCities.Pluma.PortDigitalInput.FromPayload(timestamp, messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a message payload
     /// that set the specified digital output lines.
     /// </summary>
     [DisplayName("OutputSetPayload")]
-    [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that set the specified digital output lines.")]
-    public partial class CreateOutputSetPayload : HarpCombinator
+    [Description("Creates a message payload that set the specified digital output lines.")]
+    public partial class CreateOutputSetPayload
     {
         /// <summary>
         /// Gets or sets the value that set the specified digital output lines.
         /// </summary>
         [Description("The value that set the specified digital output lines.")]
-        public DigitalOutputs Value { get; set; }
+        public DigitalOutputs OutputSet { get; set; }
 
         /// <summary>
-        /// Creates an observable sequence that contains a single message
-        /// that set the specified digital output lines.
+        /// Creates a message payload for the OutputSet register.
         /// </summary>
-        /// <returns>
-        /// A sequence containing a single <see cref="HarpMessage"/> object
-        /// representing the created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process()
+        /// <returns>The created message payload value.</returns>
+        public DigitalOutputs GetPayload()
         {
-            return Process(Observable.Return(System.Reactive.Unit.Default));
+            return OutputSet;
         }
 
         /// <summary>
-        /// Creates an observable sequence of message payloads
-        /// that set the specified digital output lines.
+        /// Creates a message that set the specified digital output lines.
         /// </summary>
-        /// <typeparam name="TSource">
-        /// The type of the elements in the <paramref name="source"/> sequence.
-        /// </typeparam>
-        /// <param name="source">
-        /// The sequence containing the notifications used for emitting message payloads.
-        /// </param>
-        /// <returns>
-        /// A sequence of <see cref="HarpMessage"/> objects representing each
-        /// created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the OutputSet register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
         {
-            return source.Select(_ => OutputSet.FromPayload(MessageType, Value));
+            return EmotionalCities.Pluma.OutputSet.FromPayload(messageType, GetPayload());
         }
     }
 
     /// <summary>
-    /// Represents an operator that creates a sequence of message payloads
+    /// Represents an operator that creates a timestamped message payload
+    /// that set the specified digital output lines.
+    /// </summary>
+    [DisplayName("TimestampedOutputSetPayload")]
+    [Description("Creates a timestamped message payload that set the specified digital output lines.")]
+    public partial class CreateTimestampedOutputSetPayload : CreateOutputSetPayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that set the specified digital output lines.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the OutputSet register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return EmotionalCities.Pluma.OutputSet.FromPayload(timestamp, messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a message payload
     /// that clear the specified digital output lines.
     /// </summary>
     [DisplayName("OutputClearPayload")]
-    [WorkflowElementCategory(ElementCategory.Transform)]
-    [Description("Creates a sequence of message payloads that clear the specified digital output lines.")]
-    public partial class CreateOutputClearPayload : HarpCombinator
+    [Description("Creates a message payload that clear the specified digital output lines.")]
+    public partial class CreateOutputClearPayload
     {
         /// <summary>
         /// Gets or sets the value that clear the specified digital output lines.
         /// </summary>
         [Description("The value that clear the specified digital output lines.")]
-        public DigitalOutputs Value { get; set; }
+        public DigitalOutputs OutputClear { get; set; }
 
         /// <summary>
-        /// Creates an observable sequence that contains a single message
-        /// that clear the specified digital output lines.
+        /// Creates a message payload for the OutputClear register.
         /// </summary>
-        /// <returns>
-        /// A sequence containing a single <see cref="HarpMessage"/> object
-        /// representing the created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process()
+        /// <returns>The created message payload value.</returns>
+        public DigitalOutputs GetPayload()
         {
-            return Process(Observable.Return(System.Reactive.Unit.Default));
+            return OutputClear;
         }
 
         /// <summary>
-        /// Creates an observable sequence of message payloads
-        /// that clear the specified digital output lines.
+        /// Creates a message that clear the specified digital output lines.
         /// </summary>
-        /// <typeparam name="TSource">
-        /// The type of the elements in the <paramref name="source"/> sequence.
-        /// </typeparam>
-        /// <param name="source">
-        /// The sequence containing the notifications used for emitting message payloads.
-        /// </param>
-        /// <returns>
-        /// A sequence of <see cref="HarpMessage"/> objects representing each
-        /// created message payload.
-        /// </returns>
-        public IObservable<HarpMessage> Process<TSource>(IObservable<TSource> source)
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new message for the OutputClear register.</returns>
+        public HarpMessage GetMessage(MessageType messageType)
         {
-            return source.Select(_ => OutputClear.FromPayload(MessageType, Value));
+            return EmotionalCities.Pluma.OutputClear.FromPayload(messageType, GetPayload());
+        }
+    }
+
+    /// <summary>
+    /// Represents an operator that creates a timestamped message payload
+    /// that clear the specified digital output lines.
+    /// </summary>
+    [DisplayName("TimestampedOutputClearPayload")]
+    [Description("Creates a timestamped message payload that clear the specified digital output lines.")]
+    public partial class CreateTimestampedOutputClearPayload : CreateOutputClearPayload
+    {
+        /// <summary>
+        /// Creates a timestamped message that clear the specified digital output lines.
+        /// </summary>
+        /// <param name="timestamp">The timestamp of the message payload, in seconds.</param>
+        /// <param name="messageType">Specifies the type of the created message.</param>
+        /// <returns>A new timestamped message for the OutputClear register.</returns>
+        public HarpMessage GetMessage(double timestamp, MessageType messageType)
+        {
+            return EmotionalCities.Pluma.OutputClear.FromPayload(timestamp, messageType, GetPayload());
         }
     }
 
@@ -1685,6 +1742,7 @@ namespace Harp.Pluma
     [Flags]
     public enum Streams : byte
     {
+        None = 0x0,
         Oximeter = 0x1,
         Ecg = 0x2,
         Gsr = 0x4,
@@ -1697,6 +1755,7 @@ namespace Harp.Pluma
     [Flags]
     public enum DigitalInputs : byte
     {
+        None = 0x0,
         DI0 = 0x1,
         DI1 = 0x2
     }
@@ -1707,6 +1766,7 @@ namespace Harp.Pluma
     [Flags]
     public enum DigitalOutputs : byte
     {
+        None = 0x0,
         DO0 = 0x1,
         DO1 = 0x2
     }
