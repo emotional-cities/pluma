@@ -1,9 +1,8 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{65FBDC77-7C6B-450B-9678-88E50224C643}") = "Harp.Pluma", "Harp.Pluma\Harp.Pluma.csproj", "{3CE62588-C24C-489C-84DF-49F2215A4004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmotionalCities.Pluma", "EmotionalCities.Pluma\EmotionalCities.Pluma.csproj", "{3CE62588-C24C-489C-84DF-49F2215A4004}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
