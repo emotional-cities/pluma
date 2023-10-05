@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <RootNamespace>Harp.Pluma</RootNamespace>
+    <RootNamespace>EmotionalCities.Pluma</RootNamespace>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <OutputPath>bin</OutputPath>
@@ -11,11 +11,11 @@
     <IOMetadata>..\ios.yml</IOMetadata>
   </PropertyGroup>
   <PropertyGroup>
-    <InterfacePath>..\Interface\Harp.Pluma</InterfacePath>
-    <FirmwarePath>..\Firmware\Harp.Pluma</FirmwarePath>
+    <InterfacePath>..\Interface\EmotionalCities.Pluma</InterfacePath>
+    <FirmwarePath>..\Firmware\EmotionalCities.Pluma</FirmwarePath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Harp.Generators" Version="0.1.0-build032704" GeneratePathProperty="true" />
+    <PackageReference Include="Harp.Generators" Version="0.1.0" GeneratePathProperty="true" />
   </ItemGroup>
   <Target Name="TextTransform" BeforeTargets="AfterBuild">
     <PropertyGroup>

@@ -3,6 +3,7 @@ desktop.ini
 
 # Visual studio files
 .vs
+.vscode
 .suo
 .nuget
 bin
