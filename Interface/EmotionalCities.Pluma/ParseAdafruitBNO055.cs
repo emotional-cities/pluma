@@ -7,7 +7,7 @@ using OpenCV.Net;
 namespace EmotionalCities.Pluma
 {
     [Combinator]
-    [Description("Parse the text messages sent by Adafruit BNO055, the firmware is implemented by Pluma-Adafruit-BNO055.ino firmware")]
+    [Description("Parse line text messages sent by Adafruit BNO055, the firmware is implemented by Pluma-Adafruit-BNO055.ino firmware\n ex: Orient:359.94,-3.06,-109.31;Gyro1:-0.00,0.00,-0.00;Linear:0.00,0.00,0.00;Mag:48.19,-47.75,2.06;Accl:-0.52,9.24,-3.24;Gravity:-0.52,9.24,-3.24;Calibration:Sys=0,Gyro=1,Accel=0,Mag=0;Temp:value=37;")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     public class ParseAdafruitBNO055
     {
@@ -44,12 +44,9 @@ namespace EmotionalCities.Pluma
                 //Temperature
                 var Temperature = float.Parse(data_split[7].Split('=')[1].Split(';')[0]);
 
-
                 return output;
             });
         }
-        //Orient:359.94,-3.06,-109.31;Gyro1:-0.00,0.00,-0.00;Linear:0.00,0.00,0.00;Mag:48.19,-47.75,2.06;Accl:-0.52,9.24,-3.24;Gravity:-0.52,9.24,-3.24;Calibration:Sys=0,Gyro=1,Accel=0,Mag=0;Temp:value=37;
-
     }
     public struct BNO055DataFrame
     {
