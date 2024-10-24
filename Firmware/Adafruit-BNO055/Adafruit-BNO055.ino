@@ -166,8 +166,7 @@ void printEvent(sensors_event_t *event)
   }
   else
   {
-  else {
-    Serial.print("Unk:");
+    Serial.print("Error:");
   }
 
   Serial.print(x);
