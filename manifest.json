@@ -1,0 +1,778 @@
+{
+  "homepages": [],
+  "source_base_path": "/github/workspace/Docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.AccelerometerData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.AccelerometerData.html",
+          "hash": "/PLGL8h1r6Ki3FHrlrZZLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.AsyncDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.AsyncDevice.html",
+          "hash": "AulxGE7w+Gum7fAnO/pTNA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.Bno055CalibrationFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.Bno055CalibrationFlags.html",
+          "hash": "63V7ZV4rNRQdc1KAQuPiTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.Bno055DataFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.Bno055DataFrame.html",
+          "hash": "vOteaVHB+4rF8tnn3/IPog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateAccelerometerDataPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateAccelerometerDataPayload.html",
+          "hash": "rC97495FdqpA+JpFm1/xKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateEcgAndAnalogDataPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateEcgAndAnalogDataPayload.html",
+          "hash": "QCaO5VUohjwP8KQ0H4dKhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateGsrDataPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateGsrDataPayload.html",
+          "hash": "kXhbhenol5M49WFBLw2ATA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateMessage.html",
+          "hash": "0Q6CSNV1HvJ6UDzoLkWuAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateOutputClearPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateOutputClearPayload.html",
+          "hash": "JNoSYd4F0by3VF+99Y5oow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateOutputSetPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateOutputSetPayload.html",
+          "hash": "ln14JMaCl6zbkZwQ5L3raA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateOximeterDataPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateOximeterDataPayload.html",
+          "hash": "XdH0N1/TDOWTRKVwPQcz9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreatePortDigitalInputPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreatePortDigitalInputPayload.html",
+          "hash": "WNDkqiUn23E7YqgamCEGeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateStreamsDisablePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateStreamsDisablePayload.html",
+          "hash": "GJi73G0oT2tKuMAB8WpEQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateStreamsEnablePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateStreamsEnablePayload.html",
+          "hash": "MBWGCmh2RMXVNydZbTOiNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateTimestampedAccelerometerDataPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateTimestampedAccelerometerDataPayload.html",
+          "hash": "tamC7NdEofv6D68im1k+Jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateTimestampedEcgAndAnalogDataPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateTimestampedEcgAndAnalogDataPayload.html",
+          "hash": "LtTnGsSpczql1mVln5dt5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateTimestampedGsrDataPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateTimestampedGsrDataPayload.html",
+          "hash": "GZm4ZfqTlzX+f27vXpLgMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateTimestampedOutputClearPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateTimestampedOutputClearPayload.html",
+          "hash": "YZADY0onwiOUa0bR+lssvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateTimestampedOutputSetPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateTimestampedOutputSetPayload.html",
+          "hash": "o3XIwZmMW9K5AG4qvpt69A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateTimestampedOximeterDataPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateTimestampedOximeterDataPayload.html",
+          "hash": "Exhuob7C44SRp39YBi7eUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateTimestampedPortDigitalInputPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateTimestampedPortDigitalInputPayload.html",
+          "hash": "Bgto5HubAMofEjMJ9HpPpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateTimestampedStreamsDisablePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateTimestampedStreamsDisablePayload.html",
+          "hash": "RPbHcNRzi0GLUVWjd9iQdg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.CreateTimestampedStreamsEnablePayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.CreateTimestampedStreamsEnablePayload.html",
+          "hash": "PlkLwvjgd6hvpoLgxdcFjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.Device.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.Device.html",
+          "hash": "ATrsfzSbyh8M3Km8jLawMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.DigitalInputs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.DigitalInputs.html",
+          "hash": "TiBAojseTPWIuBuTvaZMBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.DigitalOutputs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.DigitalOutputs.html",
+          "hash": "qm88SI1KAJgycZJiageing=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.EcgAndAnalogData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.EcgAndAnalogData.html",
+          "hash": "QiIwzUuUDzTFCC0RVZ+Sew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.EcgAndAnalogDataPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.EcgAndAnalogDataPayload.html",
+          "hash": "YvxjF89z8WkBQmp/KKhn7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.FilterRegister.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.FilterRegister.html",
+          "hash": "JoTmUfqB5KKiPxsxImnTaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.Format.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.Format.html",
+          "hash": "xYR9xc90LT4qj1gyt4gJ6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.GroupByRegister.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.GroupByRegister.html",
+          "hash": "jnSlg3J80Ff39fMqbOG9Xg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.GsrData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.GsrData.html",
+          "hash": "d+mmxWB3uG2Gty4qvN3oiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.OutputClear.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.OutputClear.html",
+          "hash": "UtWRt1LzAMF3KP58vXgz7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.OutputSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.OutputSet.html",
+          "hash": "hPMRpcflyG8VnoVDS7prbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.OximeterData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.OximeterData.html",
+          "hash": "0dj+0ZGyeAJi8JCw8agxVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.OximeterDataPayload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.OximeterDataPayload.html",
+          "hash": "N5fipW8XwKrU5cszWYF+cw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.Parse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.Parse.html",
+          "hash": "P3Utr0+hfSE2FrngfGRgNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.ParseAdafruitBno055.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.ParseAdafruitBno055.html",
+          "hash": "7hMPiy+5AGBidR1bDqSQGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.PortDigitalInput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.PortDigitalInput.html",
+          "hash": "n1KT4FP5t3Gbyo/zqOtr0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.Streams.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.Streams.html",
+          "hash": "cR3RS9YoZP++DpoPgpItKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.StreamsDisable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.StreamsDisable.html",
+          "hash": "SZDHMYbd3Ugumocy7xY36A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.StreamsEnable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.StreamsEnable.html",
+          "hash": "pgfhkfZPzcqYL3JL3BmOXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.TimestampedAccelerometerData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.TimestampedAccelerometerData.html",
+          "hash": "RIZIW3XHza9r2zaRTLvtBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.TimestampedEcgAndAnalogData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.TimestampedEcgAndAnalogData.html",
+          "hash": "rg3rLE5WX/fhwOFwhYcBug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.TimestampedGsrData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.TimestampedGsrData.html",
+          "hash": "sgba+9QfQM7h/qwj+Z4Arw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.TimestampedOutputClear.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.TimestampedOutputClear.html",
+          "hash": "7yLwQc6PBnVc5pgtofv5Wg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.TimestampedOutputSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.TimestampedOutputSet.html",
+          "hash": "njFmiNKZ0+loGXjrneDfrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.TimestampedOximeterData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.TimestampedOximeterData.html",
+          "hash": "3wQCoxvLo7ApEXmhzdPaNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.TimestampedPortDigitalInput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.TimestampedPortDigitalInput.html",
+          "hash": "QNdvVjK0uvD7dO1vX2hOEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.TimestampedStreamsDisable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.TimestampedStreamsDisable.html",
+          "hash": "rDNeyM6w0z6zgZat8mwz9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.TimestampedStreamsEnable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.TimestampedStreamsEnable.html",
+          "hash": "ZxTXaL+BuMNxD7rPbcnrJQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EmotionalCities.Pluma.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EmotionalCities.Pluma.html",
+          "hash": "G2m8PibbNraDuszoZR/FFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "+HXQagL0arFNxJUGIaCKpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "unJMo6cHh57Nq8A0j2KMQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "gB8AESyvNru97tzIZofEEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "HFMIUthjauGV8cWfWzQorA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "mIZfgwVXgA+PUGY0yBmqTA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 52,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
