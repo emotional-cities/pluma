@@ -4,10 +4,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reactive.Linq;
 using OpenCV.Net;
+
 namespace EmotionalCities.Pluma
 {
     [Combinator]
-    [Description("Parse line text messages sent by Adafruit BNO055, the firmware is implemented by Pluma-Adafruit-BNO055.ino firmware\n ex: Orient:359.94,-3.06,-109.31;Gyro1:-0.00,0.00,-0.00;Linear:0.00,0.00,0.00;Mag:48.19,-47.75,2.06;Accl:-0.52,9.24,-3.24;Gravity:-0.52,9.24,-3.24;Calibration:Sys=0,Gyro=1,Accel=0,Mag=0;Temp:value=37;")]
+    [Description("Parse line text messages sent by Adafruit BNO055, the firmware is implemented by Adafruit-BNO055.ino firmware.")]
     [WorkflowElementCategory(ElementCategory.Transform)]
     public class ParseAdafruitBNO055
     {
@@ -15,6 +16,9 @@ namespace EmotionalCities.Pluma
         {
             return source.Select(value =>
             {
+                // Example message format:
+                // Orient:359.94,-3.06,-109.31;Gyro1:-0.00,0.00,-0.00;Linear:0.00,0.00,0.00;Mag:48.19,-47.75,2.06;Accl:-0.52,9.24,-3.24;Gravity:-0.52,9.24,-3.24;Calibration:Sys=0,Gyro=1,Accel=0,Mag=0;Temp:value=37;
+
                 var output = new BNO055DataFrame();
                 var data_split = value.Split(';');
                 //Orientation
@@ -48,6 +52,7 @@ namespace EmotionalCities.Pluma
             });
         }
     }
+
     public struct BNO055DataFrame
     {
         public Point3f Orientation;
