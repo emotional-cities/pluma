@@ -18,13 +18,14 @@
     <PackageOutputPath>..\bin\$(Configuration)</PackageOutputPath>
     <PackageTags>Bonsai Rx Emotional Cities Harp Pluma</PackageTags>
     <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
-    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionPrefix>0.2.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Bonsai.Harp" Version="3.5.0" />
+    <PackageReference Include="OpenCV.Net" Version="3.4.2" />
   </ItemGroup>
 
   <ItemGroup>
